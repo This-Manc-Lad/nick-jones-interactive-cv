@@ -264,7 +264,7 @@
     document.body.style.overflow = "";
     setTimeout(() => {
       lightbox.setAttribute("hidden", "");
-      lightboxImg.src = "";
+      lightboxImg.removeAttribute("src");
     }, 300);
     if (lastFocus) lastFocus.focus();
   }
