@@ -1,15 +1,15 @@
 # Nick Jones Interactive CV
 
-A static, single-page interactive CV and personal brand site for Nick Jones.
+A static, single-page interactive CV journey for Nick Jones.
 
 ## Open locally
 
-Open `index.html` directly in a browser, or serve the folder with any simple static server.
+For the most reliable preview, serve the folder with a simple local server and open `index.html`.
 
 ## Key files
 
-- `index.html`: page content
-- `styles.css`: visual styling and responsive layout
-- `script.js`: scroll effects, intro animation, counters and image lightbox
-- `assets/source-documents/nick-jones-cv.pdf`: downloadable CV
-- `assets/source-documents/nick-jones-reference-pack.pdf`: reference pack
+- `index.html`: the interactive CV journey page
+- `support.js`: the small runtime that makes the exported page work
+- `image-slot.js`: supports the headshot image slot
+- `image-slots.state.json`: stores the filled headshot image
+- `assets/`: images, logos and the downloadable CV PDF
