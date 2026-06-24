@@ -10,58 +10,6 @@
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------- Intro letter loader ---------- */
-  const body = document.body;
-  const letterLoader = $("#letter-loader");
-  const letterOpen = $("#letter-open");
-  const letterSkip = $("#letter-skip");
-  let introStarted = false;
-
-  function finishIntro() {
-    if (!body) return;
-    body.classList.remove("preload-active");
-    if (letterLoader) letterLoader.setAttribute("hidden", "");
-    window.setTimeout(() => {
-      const hash = window.location.hash;
-      if (hash) {
-        const target = document.querySelector(hash);
-        if (target) {
-          const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - 24);
-          window.scrollTo({ top, left: 0, behavior: "auto" });
-        }
-      }
-      $$("[data-reveal]").forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.94 && rect.bottom > 0) {
-          el.classList.add("is-visible");
-        }
-      });
-      window.dispatchEvent(new Event("scroll"));
-      window.dispatchEvent(new Event("resize"));
-    }, 40);
-  }
-
-  function openIntro(immediate) {
-    if (introStarted) return;
-    introStarted = true;
-    if (!letterLoader || reduceMotion || immediate) {
-      finishIntro();
-      return;
-    }
-    letterLoader.classList.add("is-opening");
-    window.setTimeout(finishIntro, 1250);
-  }
-
-  if (letterLoader) {
-    if (reduceMotion) {
-      window.setTimeout(() => openIntro(true), 260);
-    } else {
-      window.setTimeout(() => openIntro(false), 1150);
-    }
-    if (letterOpen) letterOpen.addEventListener("click", () => openIntro(false));
-    if (letterSkip) letterSkip.addEventListener("click", () => openIntro(true));
-  }
-
   /* ---------- Nav: scrolled state + mobile menu ---------- */
   const nav = $(".site-nav");
   const toggle = $(".nav-toggle");

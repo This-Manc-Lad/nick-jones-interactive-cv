@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Nick Jones interactive CV journey, covering commercial leadership, brand building, wholesale, retail, eCommerce, references and project work.">
+<meta name="description" content="Commercial, brand and retail leader with 14+ years' experience across premium jewellery, wholesale, e-commerce, retail partnerships and AI-enabled brand development.">
 <meta name="theme-color" content="#F2ECDF">
-<meta property="og:title" content="Nick Jones - Interactive CV Journey">
-<meta property="og:description" content="An interactive CV journey for Nick Jones, commercially minded creative and brand leader.">
-<title>Nick Jones - Interactive CV Journey</title>
+<meta property="og:title" content="Nick Jones | Interactive CV">
+<meta property="og:description" content="Commercial, brand and retail leader with 14+ years' experience across premium jewellery, wholesale, e-commerce, retail partnerships and AI-enabled brand development.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/optimized/nick-portrait.webp">
+<meta property="og:image:alt" content="Portrait of Nick Jones">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Crect width='96' height='96' rx='20' fill='%232B3026'/%3E%3Ccircle cx='48' cy='48' r='30' fill='none' stroke='%23E7D29B' stroke-width='3'/%3E%3Ctext x='48' y='58' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='%23E7D29B'%3ENJ%3C/text%3E%3C/svg%3E">
+<title>Nick Jones | Interactive CV</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -41,11 +45,30 @@
   @keyframes ts-flip{0%,40%{transform:rotateY(0deg);}52%,90%{transform:rotateY(180deg);}100%{transform:rotateY(360deg);}}
   @keyframes ripple-swap{0%,38%{clip-path:circle(0% at 50% 50%);}50%,88%{clip-path:circle(150% at 50% 50%);}100%{clip-path:circle(0% at 50% 50%);}}
   @keyframes project-blur-fade{0%,38%{opacity:0;filter:blur(14px);transform:scale(1.025);}50%,86%{opacity:1;filter:blur(0);transform:scale(1);}100%{opacity:0;filter:blur(14px);transform:scale(1.025);}}
+  @keyframes project-blur-cycle{0%,100%{opacity:0;filter:blur(14px);transform:scale(1.025);}12%,29%{opacity:1;filter:blur(0);transform:scale(1);}41%,95%{opacity:0;filter:blur(14px);transform:scale(1.025);}}
   @keyframes name-in{0%{opacity:0;transform:translateY(64px) rotate(2deg);}100%{opacity:1;transform:translateY(0) rotate(0);}}
   @keyframes write-on{from{clip-path:inset(-12% 100% -22% -4%);}to{clip-path:inset(-12% -8% -22% -4%);}}
   @keyframes digital-in{0%{opacity:0;transform:translateY(-7px);filter:blur(3px);}38%{opacity:1;color:#B89355;transform:translateY(2px);}70%{color:#B89355;}100%{opacity:1;transform:none;filter:blur(0);}}
   .mq-track{display:flex;width:max-content;gap:18px;will-change:transform;}
   .mq-row:hover .mq-track{animation-play-state:paused;}
+  .mq-row[data-proof-marquee]:hover .mq-track{animation-play-state:running;}
+  .hero-cta-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;width:min(100%,900px);margin-top:30px;}
+  .hero-cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;width:100%;text-decoration:none;border-radius:999px;padding:14px 18px;font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;transition:transform .35s,box-shadow .35s,background .35s,color .35s,border-color .35s;text-align:center;line-height:1.15;}
+  .hero-cta-btn .cta-icon{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;font-size:15px;line-height:1;flex:none;}
+  .hero-cta-btn .cta-label{display:inline-block;max-width:100%;}
+  .hero-proof-marquees{display:flex;flex-direction:column;gap:14px;width:min(100vw,1080px);margin-top:24px;}
+  .hero-proof-row{overflow:hidden;width:100%;}
+  .hero-proof-pill{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;background:rgba(255,255,255,.82);border:1.5px solid rgba(140,110,58,.18);border-radius:999px;box-shadow:0 14px 34px -24px rgba(184,147,85,.5);font-family:'Hanken Grotesk',sans-serif;font-size:clamp(11px,1.15vw,12.5px);letter-spacing:.12em;text-transform:uppercase;color:#4C5145;font-weight:700;white-space:nowrap;}
+  .hero-proof-pill--wide{padding-inline:30px;}
+  @media (max-width:900px){
+    .hero-cta-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  }
+  @media (max-width:560px){
+    .hero-cta-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+    .hero-cta-btn{min-height:66px;padding:12px 14px;font-size:11px;letter-spacing:.1em;flex-direction:column;gap:6px;}
+    .hero-cta-btn .cta-icon{width:18px;height:18px;font-size:14px;}
+    .hero-proof-pill{min-height:50px;padding:0 20px;font-size:11px;letter-spacing:.1em;}
+  }
   #nick-headshot,#nick-profile{display:block !important;width:100% !important;height:100% !important;}
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;}
@@ -64,7 +87,7 @@
   <div style="position:fixed;inset:0;pointer-events:none;z-index:60;opacity:0.05;mix-blend-mode:multiply;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);background-size:220px 220px;"></div>
 
   <!-- ============ HERO ============ -->
-  <section style="position:relative;min-height:100vh;display:flex;align-items:center;padding:clamp(96px,13vh,150px) clamp(24px,7vw,120px) clamp(56px,8vh,90px);overflow:hidden;">
+  <section id="top" style="position:relative;min-height:100vh;display:flex;align-items:center;padding:clamp(96px,13vh,150px) clamp(24px,7vw,120px) clamp(56px,8vh,90px);overflow:hidden;">
     <div data-parallax="0.16" style="position:absolute;right:-3%;top:4%;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(240px,40vw,620px);line-height:.78;color:rgba(60,74,53,0.055);letter-spacing:-.05em;pointer-events:none;user-select:none;z-index:0;">NJ</div>
     <div data-parallax="0.34" style="position:absolute;left:-170px;bottom:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 42% 40%,rgba(231,210,155,.55),rgba(231,210,155,0) 70%);filter:blur(8px);pointer-events:none;z-index:0;"></div>
     <div style="position:absolute;right:6%;bottom:14%;width:9px;height:9px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);opacity:.7;z-index:0;animation:floaty 7s ease-in-out infinite;"></div>
@@ -83,24 +106,39 @@
         </h1>
         <div data-reveal="" style="opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.16,.84,.44,1) .16s,transform 1s cubic-bezier(.16,.84,.44,1) .16s;">
           <div style="width:56px;height:2px;background:linear-gradient(90deg,#B89355,#E7D29B);margin:22px auto 20px;"></div>
-          <p style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(17px,2.1vw,22px);line-height:1.55;color:#4C5145;max-width:28ch;margin:0 auto;font-weight:400;text-wrap:balance;">Commercially minded creative with a passion for <span style="color:#3C4A35;font-weight:600;">brand building</span> and <span style="color:#8C6E3A;font-weight:600;">AI integration</span>.</p>
+          <p style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(17px,2.1vw,22px);line-height:1.55;color:#4C5145;max-width:34ch;margin:0 auto;font-weight:400;text-wrap:balance;">Senior commercial, brand and retail leader helping premium consumer brands grow through stronger partnerships, better storytelling, smarter execution and practical AI adoption.</p>
         </div>
-        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.16,.84,.44,1) .24s,transform 1s cubic-bezier(.16,.84,.44,1) .24s;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px;">
-          <a href="mailto:nw.jones87@gmail.com" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:rgba(255,255,255,.55);border:1px solid rgba(140,110,58,.32);border-radius:999px;padding:11px 18px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;color:#3C4A35;font-weight:500;transition:all .35s;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;">
-            <span style="display:inline-block;width:6px;height:6px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>nw.jones87@gmail.com
-          </a>
-          <a href="tel:+447470039114" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:rgba(255,255,255,.55);border:1px solid rgba(140,110,58,.32);border-radius:999px;padding:11px 18px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;color:#3C4A35;font-weight:500;transition:all .35s;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;">
-            <span style="display:inline-block;width:6px;height:6px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>+44 (0)7470 039114
-          </a>
-          <span style="display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.55);border:1px solid rgba(140,110,58,.32);border-radius:999px;padding:11px 18px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;color:#3C4A35;font-weight:500;">
-            <span style="display:inline-block;width:6px;height:6px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>Manchester, UK
-          </span>
-        </div>
-        <div data-reveal="" style="opacity:0;transform:translateY(20px);transition:opacity 1s ease .4s,transform 1s ease .4s;display:flex;align-items:center;gap:14px;margin-top:clamp(40px,7vh,64px);">
-          <div style="width:25px;height:39px;border:1.5px solid rgba(140,110,58,.5);border-radius:14px;position:relative;flex:none;">
-            <div style="position:absolute;left:50%;top:7px;transform:translateX(-50%);width:3px;height:7px;border-radius:2px;background:#B89355;animation:scrolldot 1.9s ease-in-out infinite;"></div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.16,.84,.44,1) .24s,transform 1s cubic-bezier(.16,.84,.44,1) .24s;width:100%;">
+          <div class="hero-cta-grid">
+            <a href="assets/Nick-Jones-CV.pdf" download="Nick-Jones-CV.pdf" aria-label="Download PDF CV" class="hero-cta-btn" style="background:linear-gradient(135deg,#C9A96A,#E7D29B);border:1px solid rgba(140,110,58,.25);color:#2B3026;box-shadow:0 18px 38px -20px rgba(184,147,85,.8);" style-hover="transform:translateY(-2px);box-shadow:0 22px 46px -18px rgba(184,147,85,.9);"><span class="cta-icon" aria-hidden="true">↓</span><span class="cta-label">Download CV</span></a>
+            <a href="#projects" aria-label="Jump to key projects" class="hero-cta-btn" style="background:rgba(60,74,53,.08);border:1px solid rgba(60,74,53,.24);color:#3C4A35;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;"><span class="cta-icon" aria-hidden="true">◇</span><span class="cta-label">Key Projects</span></a>
+            <a href="#contact" aria-label="Jump to contact details" class="hero-cta-btn" style="background:rgba(255,255,255,.72);border:1px solid rgba(140,110,58,.32);color:#3C4A35;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;"><span class="cta-icon" aria-hidden="true">✉</span><span class="cta-label">Contact Nick</span></a>
+            <a href="https://www.linkedin.com/in/nick-jones-5809b671/" target="_blank" rel="noreferrer" aria-label="Open Nick Jones LinkedIn profile" class="hero-cta-btn" style="background:rgba(255,255,255,.72);border:1px solid rgba(140,110,58,.32);color:#3C4A35;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;"><span class="cta-icon" aria-hidden="true">↗</span><span class="cta-label">LinkedIn</span></a>
           </div>
-          <span style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#A89C82;font-weight:600;">Scroll the journey</span>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.16,.84,.44,1) .32s,transform 1s cubic-bezier(.16,.84,.44,1) .32s;width:100%;display:flex;justify-content:center;">
+          <div class="hero-proof-marquees">
+            <div class="mq-row hero-proof-row" data-proof-marquee="">
+              <div class="mq-track" style="animation:marquee-l 32s linear infinite;">
+                <span class="hero-proof-pill">14+ years' experience</span>
+                <span class="hero-proof-pill">£3m+ revenue accountability</span>
+                <span class="hero-proof-pill">200+ UK &amp; Ireland POS partners</span>
+                <span class="hero-proof-pill">14+ years' experience</span>
+                <span class="hero-proof-pill">£3m+ revenue accountability</span>
+                <span class="hero-proof-pill">200+ UK &amp; Ireland POS partners</span>
+              </div>
+            </div>
+            <div class="mq-row hero-proof-row" data-proof-marquee="">
+              <div class="mq-track" style="animation:marquee-r 36s linear infinite;">
+                <span class="hero-proof-pill">c. 35% revenue growth</span>
+                <span class="hero-proof-pill">c. 30% online uplift</span>
+                <span class="hero-proof-pill hero-proof-pill--wide">Wholesale, e-commerce, travel retail &amp; premium brands</span>
+                <span class="hero-proof-pill">c. 35% revenue growth</span>
+                <span class="hero-proof-pill">c. 30% online uplift</span>
+                <span class="hero-proof-pill hero-proof-pill--wide">Wholesale, e-commerce, travel retail &amp; premium brands</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- photo -->
@@ -119,7 +157,7 @@
   </section>
 
   <!-- ============ PROFILE ============ -->
-  <section style="position:relative;padding:clamp(60px,11vh,130px) clamp(24px,7vw,120px);overflow:hidden;">
+  <section id="profile" style="position:relative;padding:clamp(60px,11vh,130px) clamp(24px,7vw,120px);overflow:hidden;">
     <div style="position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;">
       <div style="position:relative;max-width:720px;margin:0 auto;display:flex;flex-direction:column;align-items:center;">
         <!-- title hovers just over the top of the image -->
@@ -146,7 +184,7 @@
             <div style="padding-top:22px;">
               <p style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(16px,1.5vw,18px);line-height:1.72;color:#4C5145;margin:0 0 20px;text-wrap:pretty;">Across those years I&rsquo;ve carried <span style="color:#3C4A35;font-weight:600;">&pound;3m+</span> in revenue accountability and supported <span style="color:#3C4A35;font-weight:600;">200+</span> points of sale across the UK and Ireland &mdash; but what I care about most is the thinking behind the numbers: why a partnership works, where a brand can stretch, and how to turn a creative idea into something that genuinely sells.</p>
               <p style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(16px,1.5vw,18px);line-height:1.72;color:#4C5145;margin:0 0 20px;text-wrap:pretty;">I&rsquo;m equally at home shaping strategy in a boardroom and standing on a shop floor. I lead teams through change with structure and energy, build trust quickly, and tend to see problems coming before they land on anyone&rsquo;s desk.</p>
-              <p style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(16px,1.5vw,18px);line-height:1.72;color:#4C5145;margin:0 0 20px;text-wrap:pretty;">Lately I&rsquo;ve been deep in AI &mdash; using it to move faster on brand development, visual merchandising and commercial planning, without losing the human craft that makes a premium brand feel premium.</p>
+              <p style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(16px,1.5vw,18px);line-height:1.72;color:#4C5145;margin:0 0 20px;text-wrap:pretty;">More recently I&rsquo;ve been using AI to accelerate concept work, strengthen sell-in tools, prototype workflows and sharpen commercial planning, while keeping brand quality and human judgement front and centre.</p>
               <p style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(16px,1.5vw,18px);line-height:1.72;color:#4C5145;margin:0;text-wrap:pretty;">Based in Manchester, working across the UK, Ireland and beyond &mdash; always looking for the next brand worth building.</p>
             </div>
           </div>
@@ -159,29 +197,72 @@
   <section style="position:relative;background:linear-gradient(160deg,#3C4A35,#2E3A28);padding:clamp(20px,3vh,32px) clamp(24px,7vw,120px);overflow:hidden;">
     <canvas id="stats-chart" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></canvas>
     <div data-stagger="" style="position:relative;max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(16px,2.4vw,30px);">
-      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="5">
-        <div data-reveal="" data-flipclock="{{ s.id }}" style="opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1);flex:0 0 auto;width:clamp(132px,15vw,176px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:9px;">
+        <div data-reveal="" data-flipclock="s1" style="opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1);flex:0 0 auto;width:clamp(148px,16vw,204px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:9px;">
           <div style="position:relative;width:100%;perspective:1200px;display:flex;align-items:center;justify-content:center;">
             <div style="position:relative;width:100%;background:linear-gradient(165deg,#3C4A35,#2E3A28);border-radius:8px;padding:clamp(12px,1.6vw,18px) 8px;box-shadow:0 12px 26px -18px rgba(43,48,38,.7);display:flex;align-items:center;justify-content:center;border:2px solid rgba(231,210,155,.32);overflow:hidden;">
               <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(231,210,155,.08),transparent 50%,rgba(0,0,0,.1));pointer-events:none;"></div>
-              <div style="font-family:'Courier New',monospace;font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1;color:#E7D29B;text-shadow:0 2px 8px rgba(0,0,0,.4);position:relative;z-index:2;">{{ s.num }}</div>
+              <div style="font-family:'Courier New',monospace;font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1;color:#E7D29B;text-shadow:0 2px 8px rgba(0,0,0,.4);position:relative;z-index:2;">14+</div>
             </div>
           </div>
-          <div style="font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:rgba(244,239,226,.65);line-height:1.3;max-width:15ch;">{{ s.label }}</div>
+          <div style="font-family:'Hanken Grotesk',sans-serif;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:rgba(244,239,226,.65);line-height:1.3;max-width:16ch;">Years growing premium brands</div>
         </div>
-      </sc-for>
+        <div data-reveal="" data-flipclock="s2" style="opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1);flex:0 0 auto;width:clamp(148px,16vw,204px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:9px;">
+          <div style="position:relative;width:100%;perspective:1200px;display:flex;align-items:center;justify-content:center;">
+            <div style="position:relative;width:100%;background:linear-gradient(165deg,#3C4A35,#2E3A28);border-radius:8px;padding:clamp(12px,1.6vw,18px) 8px;box-shadow:0 12px 26px -18px rgba(43,48,38,.7);display:flex;align-items:center;justify-content:center;border:2px solid rgba(231,210,155,.32);overflow:hidden;">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(231,210,155,.08),transparent 50%,rgba(0,0,0,.1));pointer-events:none;"></div>
+              <div style="font-family:'Courier New',monospace;font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1;color:#E7D29B;text-shadow:0 2px 8px rgba(0,0,0,.4);position:relative;z-index:2;">£3m+</div>
+            </div>
+          </div>
+          <div style="font-family:'Hanken Grotesk',sans-serif;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:rgba(244,239,226,.65);line-height:1.3;max-width:16ch;">Revenue accountability</div>
+        </div>
+        <div data-reveal="" data-flipclock="s3" style="opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1);flex:0 0 auto;width:clamp(148px,16vw,204px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:9px;">
+          <div style="position:relative;width:100%;perspective:1200px;display:flex;align-items:center;justify-content:center;">
+            <div style="position:relative;width:100%;background:linear-gradient(165deg,#3C4A35,#2E3A28);border-radius:8px;padding:clamp(12px,1.6vw,18px) 8px;box-shadow:0 12px 26px -18px rgba(43,48,38,.7);display:flex;align-items:center;justify-content:center;border:2px solid rgba(231,210,155,.32);overflow:hidden;">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(231,210,155,.08),transparent 50%,rgba(0,0,0,.1));pointer-events:none;"></div>
+              <div style="font-family:'Courier New',monospace;font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1;color:#E7D29B;text-shadow:0 2px 8px rgba(0,0,0,.4);position:relative;z-index:2;">200+</div>
+            </div>
+          </div>
+          <div style="font-family:'Hanken Grotesk',sans-serif;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:rgba(244,239,226,.65);line-height:1.3;max-width:16ch;">UK &amp; Ireland POS partners</div>
+        </div>
+        <div data-reveal="" data-flipclock="s4" style="opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1);flex:0 0 auto;width:clamp(148px,16vw,204px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:9px;">
+          <div style="position:relative;width:100%;perspective:1200px;display:flex;align-items:center;justify-content:center;">
+            <div style="position:relative;width:100%;background:linear-gradient(165deg,#3C4A35,#2E3A28);border-radius:8px;padding:clamp(12px,1.6vw,18px) 8px;box-shadow:0 12px 26px -18px rgba(43,48,38,.7);display:flex;align-items:center;justify-content:center;border:2px solid rgba(231,210,155,.32);overflow:hidden;">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(231,210,155,.08),transparent 50%,rgba(0,0,0,.1));pointer-events:none;"></div>
+              <div style="font-family:'Courier New',monospace;font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1;color:#E7D29B;text-shadow:0 2px 8px rgba(0,0,0,.4);position:relative;z-index:2;">c.35%</div>
+            </div>
+          </div>
+          <div style="font-family:'Hanken Grotesk',sans-serif;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:rgba(244,239,226,.65);line-height:1.3;max-width:16ch;">Revenue growth driven</div>
+        </div>
+        <div data-reveal="" data-flipclock="s5" style="opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1);flex:0 0 auto;width:clamp(148px,16vw,204px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:9px;">
+          <div style="position:relative;width:100%;perspective:1200px;display:flex;align-items:center;justify-content:center;">
+            <div style="position:relative;width:100%;background:linear-gradient(165deg,#3C4A35,#2E3A28);border-radius:8px;padding:clamp(12px,1.6vw,18px) 8px;box-shadow:0 12px 26px -18px rgba(43,48,38,.7);display:flex;align-items:center;justify-content:center;border:2px solid rgba(231,210,155,.32);overflow:hidden;">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(231,210,155,.08),transparent 50%,rgba(0,0,0,.1));pointer-events:none;"></div>
+              <div style="font-family:'Courier New',monospace;font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1;color:#E7D29B;text-shadow:0 2px 8px rgba(0,0,0,.4);position:relative;z-index:2;">c.30%</div>
+            </div>
+          </div>
+          <div style="font-family:'Hanken Grotesk',sans-serif;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:rgba(244,239,226,.65);line-height:1.3;max-width:16ch;">Online channel uplift</div>
+        </div>
+        <div data-reveal="" data-flipclock="s6" style="opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1);flex:0 0 auto;width:clamp(148px,16vw,204px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:9px;">
+          <div style="position:relative;width:100%;perspective:1200px;display:flex;align-items:center;justify-content:center;">
+            <div style="position:relative;width:100%;background:linear-gradient(165deg,#3C4A35,#2E3A28);border-radius:8px;padding:clamp(12px,1.6vw,18px) 8px;box-shadow:0 12px 26px -18px rgba(43,48,38,.7);display:flex;align-items:center;justify-content:center;border:2px solid rgba(231,210,155,.32);overflow:hidden;">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(231,210,155,.08),transparent 50%,rgba(0,0,0,.1));pointer-events:none;"></div>
+              <div style="font-family:'Courier New',monospace;font-weight:700;font-size:clamp(20px,2.5vw,28px);line-height:1;color:#E7D29B;text-shadow:0 2px 8px rgba(0,0,0,.4);position:relative;z-index:2;">B2B + D2C</div>
+            </div>
+          </div>
+          <div style="font-family:'Hanken Grotesk',sans-serif;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:rgba(244,239,226,.65);line-height:1.3;max-width:18ch;">Wholesale, e-commerce, travel retail &amp; premium brand depth</div>
+        </div>
     </div>
   </section>
 
   <!-- ============ CORE SKILLS — NETWORK WEB ============ -->
-  <section style="position:relative;padding:clamp(72px,11vh,130px) clamp(24px,7vw,120px) clamp(48px,7vh,80px);overflow:hidden;">
+  <section id="strengths" style="position:relative;padding:clamp(72px,11vh,130px) clamp(24px,7vw,120px) clamp(48px,7vh,80px);overflow:hidden;">
     <div style="position:relative;z-index:2;max-width:1180px;margin:0 auto;">
       <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease;margin-bottom:clamp(18px,3vh,30px);">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
           <span style="display:inline-block;width:7px;height:7px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>
-          <span style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:#8C6E3A;font-weight:600;">Core Skills &amp; Knowledge</span>
+          <span style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:#8C6E3A;font-weight:600;">Core Commercial Strengths</span>
         </div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(26px,4.6vw,56px);line-height:1.04;letter-spacing:-.01em;margin:0;color:#2B3026;white-space:nowrap;">What I bring to the table&hellip;</h2>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(26px,4.6vw,56px);line-height:1.04;letter-spacing:-.01em;margin:0;color:#2B3026;">Core Commercial Strengths</h2>
       </div>
       <div id="skill-web" data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s ease;position:relative;width:100%;height:clamp(500px,66vh,720px);">
         <canvas id="skill-web-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></canvas>
@@ -217,15 +298,15 @@
   </div>
 
   <!-- ============ THE JOURNEY / TIMELINE ============ -->
-  <section style="position:relative;padding:clamp(28px,5vh,56px) clamp(24px,7vw,120px) clamp(72px,10vh,120px);">
+  <section id="experience" style="position:relative;padding:clamp(28px,5vh,56px) clamp(24px,7vw,120px) clamp(72px,10vh,120px);">
     <div style="position:relative;z-index:2;max-width:1080px;margin:0 auto;">
       <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease;text-align:center;margin-bottom:clamp(56px,8vh,88px);">
         <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:18px;">
           <span style="display:inline-block;width:7px;height:7px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>
           <span style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:#8C6E3A;font-weight:600;">Professional Experience</span>
         </div>
-        <h2 data-wordform="true" style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5.2vw,64px);line-height:1.02;letter-spacing:-.01em;margin:0;color:#2B3026;">My&nbsp;Journey&nbsp;So&nbsp;Far....</h2>
-        <p id="tl-subtitle" style="font-family:'Hanken Grotesk',sans-serif;font-size:15px;color:#8C8A7A;margin:16px auto 0;max-width:40ch;line-height:1.6;">From flagship retail floors to national accounts and international wholesale — most recent first.</p>
+        <h2 data-wordform="true" style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5.2vw,64px);line-height:1.02;letter-spacing:-.01em;margin:0;color:#2B3026;">My Journey So Far</h2>
+        <p id="tl-subtitle" style="font-family:'Hanken Grotesk',sans-serif;font-size:15px;color:#8C8A7A;margin:16px auto 0;max-width:44ch;line-height:1.6;">Fourteen-plus years across premium retail, wholesale, travel retail, e-commerce and brand partnerships — most recent first.</p>
         <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px;margin-top:22px;">
           <div style="display:inline-flex;align-items:center;gap:4px;padding:4px;border-radius:999px;background:rgba(140,110,58,.1);border:1px solid rgba(140,110,58,.22);">
             <button id="tl-sort-recent" type="button" style="font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border:none;cursor:pointer;padding:9px 16px;border-radius:999px;transition:background .3s,color .3s,box-shadow .3s;background:linear-gradient(160deg,#3C4A35,#2E3A28);color:#E7D29B;box-shadow:0 6px 16px -8px rgba(28,34,22,.6);">Most recent first</button>
@@ -264,7 +345,7 @@
         </div>
 
         <!-- Testimonial: Francesca Fasan -->
-        <div data-reveal="" style="opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease;margin:0 0 clamp(40px,6vh,70px) clamp(44px,calc(28px + 3vw),62px);max-width:none;position:relative;padding-top:clamp(46px,7vw,70px);">
+        <div id="testimonials" data-reveal="" style="opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease;margin:0 0 clamp(40px,6vh,70px) clamp(44px,calc(28px + 3vw),62px);max-width:none;position:relative;padding-top:clamp(46px,7vw,70px);">
           <div data-ref-ring="" style="position:relative;background:linear-gradient(160deg,#404E39,#2F3B28);border-radius:24px;padding:clamp(28px,3.4vw,40px);overflow:hidden;box-shadow:0 28px 60px -36px rgba(43,48,38,.6);min-height:clamp(110px,13vw,140px);display:flex;flex-direction:column;">
             <p data-short-quote="" style="position:relative;z-index:2;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:clamp(18px,2.15vw,25px);line-height:1.34;color:#F4EFE2;margin:clamp(56px,9vw,88px) 0 0;overflow:hidden;transition:max-height .55s cubic-bezier(.16,.84,.44,1),opacity .4s ease;text-wrap:pretty;">&ldquo;Nick consistently helped transform creative ideas into activity that supported sales, strengthened brand visibility and generated tangible business returns.&rdquo;</p>
             <div data-full-quote="" style="position:relative;z-index:2;max-height:0;overflow:hidden;opacity:0;transition:max-height .6s cubic-bezier(.16,.84,.44,1),opacity .5s ease;margin-top:18px;">
@@ -525,24 +606,52 @@
   </section>
 
   <!-- ============ SIGNATURE ACHIEVEMENTS ============ -->
-  <section style="position:relative;padding:clamp(72px,11vh,130px) clamp(24px,7vw,120px);">
+  <section id="achievements" style="position:relative;padding:clamp(72px,11vh,130px) clamp(24px,7vw,120px);">
     <div style="max-width:1180px;margin:0 auto;">
       <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease;margin-bottom:clamp(36px,5vh,56px);">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
           <span style="display:inline-block;width:7px;height:7px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>
           <span style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:#8C6E3A;font-weight:600;">Key Achievements</span>
         </div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(26px,4.6vw,56px);line-height:1.04;letter-spacing:-.01em;margin:0;color:#2B3026;white-space:nowrap;">Results that moved the needle</h2>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(26px,4.6vw,56px);line-height:1.04;letter-spacing:-.01em;margin:0;color:#2B3026;">Results that moved the needle</h2>
       </div>
       <div data-stagger="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(16px,2vw,22px);">
-        <sc-for list="{{ achievements }}" as="a" hint-placeholder-count="6">
-          <div data-reveal="" data-ach="" style="opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s,background .4s;background:rgba(255,255,255,.55);border:1px solid rgba(140,110,58,.18);border-radius:16px;padding:clamp(24px,2.6vw,32px);position:relative;overflow:hidden;box-shadow:0 18px 38px -22px rgba(43,48,38,.45);" style-hover="box-shadow:0 26px 54px -26px rgba(43,48,38,.55);border-color:rgba(184,147,85,.55);background:rgba(255,255,255,.78);">
-            <span data-sheen="" style="position:absolute;top:0;left:0;width:34%;height:100%;background:linear-gradient(100deg,transparent,rgba(231,210,155,.30),transparent);pointer-events:none;animation:card-sheen 7s ease-in-out infinite;"></span>
-            <span style="position:absolute;right:18px;top:18px;width:9px;height:9px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);animation:ach-pulse 3.4s ease-in-out infinite;"></span>
-            <div style="position:relative;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(22px,2.6vw,30px);background:linear-gradient(120deg,#9C7B43,#C9A96A,#8C6E3A,#C9A96A,#9C7B43);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px;animation:stat-flow 5s ease-in-out infinite;">{{ a.stat }}</div>
-            <p style="position:relative;font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:#4C5145;margin:0;text-wrap:pretty;">{{ a.text }}</p>
-          </div>
-        </sc-for>
+        <div data-reveal="" data-ach="" style="opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s,background .4s;background:rgba(255,255,255,.55);border:1px solid rgba(140,110,58,.18);border-radius:16px;padding:clamp(24px,2.6vw,32px);position:relative;overflow:hidden;box-shadow:0 18px 38px -22px rgba(43,48,38,.45);" style-hover="box-shadow:0 26px 54px -26px rgba(43,48,38,.55);border-color:rgba(184,147,85,.55);background:rgba(255,255,255,.78);">
+          <span data-sheen="" style="position:absolute;top:0;left:0;width:34%;height:100%;background:linear-gradient(100deg,transparent,rgba(231,210,155,.30),transparent);pointer-events:none;animation:card-sheen 7s ease-in-out infinite;"></span>
+          <span style="position:absolute;right:18px;top:18px;width:9px;height:9px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);animation:ach-pulse 3.4s ease-in-out infinite;"></span>
+          <div style="position:relative;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(22px,2.6vw,30px);background:linear-gradient(120deg,#9C7B43,#C9A96A,#8C6E3A,#C9A96A,#9C7B43);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px;animation:stat-flow 5s ease-in-out infinite;">c. 35% revenue growth</div>
+          <p style="position:relative;font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:#4C5145;margin:0;text-wrap:pretty;">Grew a major UK and Ireland account portfolio through sharper ranging, stronger distribution and more disciplined joint business planning.</p>
+        </div>
+        <div data-reveal="" data-ach="" style="opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s,background .4s;background:rgba(255,255,255,.55);border:1px solid rgba(140,110,58,.18);border-radius:16px;padding:clamp(24px,2.6vw,32px);position:relative;overflow:hidden;box-shadow:0 18px 38px -22px rgba(43,48,38,.45);" style-hover="box-shadow:0 26px 54px -26px rgba(43,48,38,.55);border-color:rgba(184,147,85,.55);background:rgba(255,255,255,.78);">
+          <span data-sheen="" style="position:absolute;top:0;left:0;width:34%;height:100%;background:linear-gradient(100deg,transparent,rgba(231,210,155,.30),transparent);pointer-events:none;animation:card-sheen 7s ease-in-out infinite;"></span>
+          <span style="position:absolute;right:18px;top:18px;width:9px;height:9px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);animation:ach-pulse 3.4s ease-in-out infinite;"></span>
+          <div style="position:relative;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(22px,2.6vw,30px);background:linear-gradient(120deg,#9C7B43,#C9A96A,#8C6E3A,#C9A96A,#9C7B43);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px;animation:stat-flow 5s ease-in-out infinite;">200+ POS partners</div>
+          <p style="position:relative;font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:#4C5145;margin:0;text-wrap:pretty;">Managed relationships across John Lewis, Selfridges, Signet, Beaverbrooks, Frasers and other premium retail partners across the UK and Ireland.</p>
+        </div>
+        <div data-reveal="" data-ach="" style="opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s,background .4s;background:rgba(255,255,255,.55);border:1px solid rgba(140,110,58,.18);border-radius:16px;padding:clamp(24px,2.6vw,32px);position:relative;overflow:hidden;box-shadow:0 18px 38px -22px rgba(43,48,38,.45);" style-hover="box-shadow:0 26px 54px -26px rgba(43,48,38,.55);border-color:rgba(184,147,85,.55);background:rgba(255,255,255,.78);">
+          <span data-sheen="" style="position:absolute;top:0;left:0;width:34%;height:100%;background:linear-gradient(100deg,transparent,rgba(231,210,155,.30),transparent);pointer-events:none;animation:card-sheen 7s ease-in-out infinite;"></span>
+          <span style="position:absolute;right:18px;top:18px;width:9px;height:9px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);animation:ach-pulse 3.4s ease-in-out infinite;"></span>
+          <div style="position:relative;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(22px,2.6vw,30px);background:linear-gradient(120deg,#9C7B43,#C9A96A,#8C6E3A,#C9A96A,#9C7B43);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px;animation:stat-flow 5s ease-in-out infinite;">£3m+ accountability</div>
+          <p style="position:relative;font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:#4C5145;margin:0;text-wrap:pretty;">Held meaningful revenue responsibility while balancing margin, partner expectations, rollout quality and long-term brand positioning.</p>
+        </div>
+        <div data-reveal="" data-ach="" style="opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s,background .4s;background:rgba(255,255,255,.55);border:1px solid rgba(140,110,58,.18);border-radius:16px;padding:clamp(24px,2.6vw,32px);position:relative;overflow:hidden;box-shadow:0 18px 38px -22px rgba(43,48,38,.45);" style-hover="box-shadow:0 26px 54px -26px rgba(43,48,38,.55);border-color:rgba(184,147,85,.55);background:rgba(255,255,255,.78);">
+          <span data-sheen="" style="position:absolute;top:0;left:0;width:34%;height:100%;background:linear-gradient(100deg,transparent,rgba(231,210,155,.30),transparent);pointer-events:none;animation:card-sheen 7s ease-in-out infinite;"></span>
+          <span style="position:absolute;right:18px;top:18px;width:9px;height:9px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);animation:ach-pulse 3.4s ease-in-out infinite;"></span>
+          <div style="position:relative;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(22px,2.6vw,30px);background:linear-gradient(120deg,#9C7B43,#C9A96A,#8C6E3A,#C9A96A,#9C7B43);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px;animation:stat-flow 5s ease-in-out infinite;">c. 30% online uplift</div>
+          <p style="position:relative;font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:#4C5145;margin:0;text-wrap:pretty;">Expanded online distribution through e-commerce and TV retail partnerships with tailored product, pricing and promotional plans.</p>
+        </div>
+        <div data-reveal="" data-ach="" style="opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s,background .4s;background:rgba(255,255,255,.55);border:1px solid rgba(140,110,58,.18);border-radius:16px;padding:clamp(24px,2.6vw,32px);position:relative;overflow:hidden;box-shadow:0 18px 38px -22px rgba(43,48,38,.45);" style-hover="box-shadow:0 26px 54px -26px rgba(43,48,38,.55);border-color:rgba(184,147,85,.55);background:rgba(255,255,255,.78);">
+          <span data-sheen="" style="position:absolute;top:0;left:0;width:34%;height:100%;background:linear-gradient(100deg,transparent,rgba(231,210,155,.30),transparent);pointer-events:none;animation:card-sheen 7s ease-in-out infinite;"></span>
+          <span style="position:absolute;right:18px;top:18px;width:9px;height:9px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);animation:ach-pulse 3.4s ease-in-out infinite;"></span>
+          <div style="position:relative;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(22px,2.6vw,30px);background:linear-gradient(120deg,#9C7B43,#C9A96A,#8C6E3A,#C9A96A,#9C7B43);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px;animation:stat-flow 5s ease-in-out infinite;">National rollouts</div>
+          <p style="position:relative;font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:#4C5145;margin:0;text-wrap:pretty;">Led store and partner rollout work from commercial proposal through stakeholder alignment, launch readiness, team training and post-launch review.</p>
+        </div>
+        <div data-reveal="" data-ach="" style="opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s,background .4s;background:rgba(255,255,255,.55);border:1px solid rgba(140,110,58,.18);border-radius:16px;padding:clamp(24px,2.6vw,32px);position:relative;overflow:hidden;box-shadow:0 18px 38px -22px rgba(43,48,38,.45);" style-hover="box-shadow:0 26px 54px -26px rgba(43,48,38,.55);border-color:rgba(184,147,85,.55);background:rgba(255,255,255,.78);">
+          <span data-sheen="" style="position:absolute;top:0;left:0;width:34%;height:100%;background:linear-gradient(100deg,transparent,rgba(231,210,155,.30),transparent);pointer-events:none;animation:card-sheen 7s ease-in-out infinite;"></span>
+          <span style="position:absolute;right:18px;top:18px;width:9px;height:9px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);animation:ach-pulse 3.4s ease-in-out infinite;"></span>
+          <div style="position:relative;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(22px,2.6vw,30px);background:linear-gradient(120deg,#9C7B43,#C9A96A,#8C6E3A,#C9A96A,#9C7B43);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px;animation:stat-flow 5s ease-in-out infinite;">Partner-ready storytelling</div>
+          <p style="position:relative;font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:#4C5145;margin:0;text-wrap:pretty;">Built training, VM and sales tools that helped partners communicate premium product stories more clearly and sell with greater confidence.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -554,14 +663,14 @@
   </div>
 
   <!-- ============ PROJECTS & ACTIVITIES (carousel) ============ -->
-  <section style="position:relative;padding:clamp(8px,2vh,20px) 0 clamp(72px,11vh,130px);overflow:hidden;">
+  <section id="projects" style="position:relative;padding:clamp(8px,2vh,20px) 0 clamp(72px,11vh,130px);overflow:hidden;">
     <div style="max-width:1180px;margin:0 auto;padding:0 clamp(24px,7vw,120px);">
       <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease;margin-bottom:clamp(30px,4vh,46px);">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
           <span style="display:inline-block;width:7px;height:7px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>
-          <span style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:#8C6E3A;font-weight:600;">Projects &amp; Activities</span>
+          <span style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:#8C6E3A;font-weight:600;">Selected Projects &amp; Commercial Tools</span>
         </div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(18px,4.2vw,52px);line-height:1.04;letter-spacing:-.01em;margin:0;color:#2B3026;max-width:none;white-space:nowrap;">Projects &amp; Tools I Spearheaded</h2>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(18px,4vw,46px);line-height:1.08;letter-spacing:-.01em;margin:0;color:#2B3026;max-width:none;">Selected Projects &amp; Commercial Tools</h2>
       </div>
     </div>
 
@@ -661,6 +770,56 @@
           </div>
         </div>
         <div style="flex:none;width:clamp(186px,21vw,245px);">
+          <div style="position:relative;width:100%;aspect-ratio:4/5;">
+            <div style="position:absolute;inset:0;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+              <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
+                <img src="assets/optimized/proj-retail-store-1.jpg" alt="Thomas Sabo retail store development storefront with white illuminated fascia" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+                <img src="assets/optimized/proj-retail-store-2.jpg" alt="Thomas Sabo retail store development storefront with black entrance framing" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;filter:blur(14px);transform:scale(1.025);animation:project-blur-cycle 12s ease-in-out infinite;">
+                <img src="assets/optimized/proj-retail-store-3.jpg" alt="Thomas Sabo retail store development storefront with warm gold facade" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;filter:blur(14px);transform:scale(1.025);animation:project-blur-cycle 12s ease-in-out infinite;animation-delay:-4s;">
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Retail store development</h3>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Storefront evolution across premium retail environments, balancing brand presence, signage and in-store theatre.</p>
+          </div>
+        </div>
+        <div style="flex:none;width:clamp(186px,21vw,245px);">
+          <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
+            <div style="position:absolute;inset:0;">
+              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-wholesale-shopfit-1.jpg" alt="Large wholesale jewellery shopfit interior with Thomas Sabo and Mococo branding" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+              </div>
+              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:ripple-swap 8s ease-in-out infinite;animation-delay:-2.5s;clip-path:circle(0% at 50% 50%);will-change:clip-path;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-wholesale-shopfit-2.jpg" alt="Thomas Sabo wholesale shopfit interior with curved purple flooring and illuminated displays" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo &middot; Mococo</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Securing the UK's biggest wholesale shopfit project</h3>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Winning and shaping a flagship wholesale environment that combined standout brand theatre with strong partner-led commercial execution.</p>
+          </div>
+        </div>
+        <div style="flex:none;width:clamp(186px,21vw,245px);">
+          <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
+            <div style="position:absolute;inset:0;">
+              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-wholesale-showroom-1.jpg" alt="Thomas Sabo Charm Club wholesale showroom with arched window and seating area" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+              </div>
+              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:ripple-swap 8s ease-in-out infinite;animation-delay:-1.5s;clip-path:circle(0% at 50% 50%);will-change:clip-path;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-wholesale-showroom-2.jpg" alt="Thomas Sabo wholesale showroom with consultation table, display cabinets and colourful wall treatment" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo &middot; Charm Club</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Introducing wholesale showroom</h3>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Creating a dedicated wholesale environment designed to host partners, present collections beautifully and support stronger commercial conversations.</p>
+          </div>
+        </div>
+        <div style="flex:none;width:clamp(186px,21vw,245px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
             <div style="position:absolute;inset:0;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
@@ -697,7 +856,7 @@
         <div style="flex:none;width:clamp(186px,21vw,245px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
             <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
-              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="ts-training" shape="rounded" radius="14" fit="cover" placeholder="Drop a photo" style="display:block;width:100%;height:100%;" hint-size="100%,100%"></x-import>
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="ts-training" role="img" aria-label="Retail and wholesale training workshop photo" shape="rounded" radius="14" fit="cover" placeholder="Drop a photo" style="display:block;width:100%;height:100%;" hint-size="100%,100%"></x-import>
             </div>
           </div>
           <div style="margin-top:16px;">
@@ -706,20 +865,18 @@
             <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Product, brand and selling training for retail teams and wholesale partners.</p>
           </div>
         </div>
-        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
-          <div style="flex:none;width:clamp(186px,21vw,245px);">
-            <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-              <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
-                <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ p.id }}" shape="rounded" radius="14" fit="cover" placeholder="Drop a photo" style="display:block;width:100%;height:100%;" hint-size="100%,100%"></x-import>
-              </div>
-            </div>
-            <div style="margin-top:16px;">
-              <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">{{ p.year }}</div>
-              <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">{{ p.title }}</h3>
-              <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">{{ p.text }}</p>
+        <div style="flex:none;width:clamp(186px,21vw,245px);">
+          <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+            <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="proj-1" role="img" aria-label="Visual merchandising guide for a retail partner" shape="rounded" radius="14" fit="cover" placeholder="Drop a photo" style="display:block;width:100%;height:100%;" hint-size="100%,100%"></x-import>
             </div>
           </div>
-        </sc-for>
+          <div style="margin-top:16px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">2025</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Bespoke VM guides per account</h3>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Brand and visual standards translated into partner-ready guides that supported more consistent in-store execution.</p>
+          </div>
+        </div>
       </div>
     </div>
     <div data-reveal="" style="opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto clamp(12px,2vh,20px);padding:0 clamp(24px,7vw,120px);">
@@ -739,7 +896,7 @@
                 <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-product-1.webp" alt="Antimatter Prism Bracelet design sheet" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
               </div>
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:ripple-swap 8s ease-in-out infinite;clip-path:circle(0% at 50% 50%);will-change:clip-path;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-product-2.webp" alt="Antimatter Spacial Geometry campaign" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-product-2.webp" alt="Antimatter Spatial Geometry campaign" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
               </div>
             </div>
           </div>
@@ -851,35 +1008,73 @@
         <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(32px,4.6vw,56px);line-height:1.04;letter-spacing:-.01em;margin:0;color:#F4EFE2;max-width:16ch;">How I lead and deliver</h2>
       </div>
       <div data-stagger="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(18px,2.4vw,28px);">
-        <sc-for list="{{ style }}" as="m" hint-placeholder-count="5">
-          <div data-reveal="" style="opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1);border-top:1px solid rgba(231,210,155,.25);padding-top:22px;">
-            <span style="display:inline-block;width:9px;height:9px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);margin-bottom:16px;"></span>
-            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(21px,2.4vw,28px);line-height:1.14;margin:0 0 10px;color:#F4EFE2;">{{ m.title }}</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:rgba(244,239,226,.74);margin:0;text-wrap:pretty;">{{ m.text }}</p>
-          </div>
-        </sc-for>
+        <div data-reveal="" style="opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1);border-top:1px solid rgba(231,210,155,.25);padding-top:22px;">
+          <span style="display:inline-block;width:9px;height:9px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);margin-bottom:16px;"></span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(21px,2.4vw,28px);line-height:1.14;margin:0 0 10px;color:#F4EFE2;">Data and evidence-led</h3>
+          <p style="font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:rgba(244,239,226,.74);margin:0;text-wrap:pretty;">I use data, market signals and trading insight to sharpen decisions, prioritise the right opportunities and improve commercial performance across channels.</p>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1);border-top:1px solid rgba(231,210,155,.25);padding-top:22px;">
+          <span style="display:inline-block;width:9px;height:9px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);margin-bottom:16px;"></span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(21px,2.4vw,28px);line-height:1.14;margin:0 0 10px;color:#F4EFE2;">Long-term partnership thinking</h3>
+          <p style="font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:rgba(244,239,226,.74);margin:0;text-wrap:pretty;">I build trust through consistency, clarity and mutual value, protecting long-term relationships while still pushing for commercial progress.</p>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1);border-top:1px solid rgba(231,210,155,.25);padding-top:22px;">
+          <span style="display:inline-block;width:9px;height:9px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);margin-bottom:16px;"></span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(21px,2.4vw,28px);line-height:1.14;margin:0 0 10px;color:#F4EFE2;">Lead by example</h3>
+          <p style="font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:rgba(244,239,226,.74);margin:0;text-wrap:pretty;">I set standards through action, support teams with structure and energy, and create the conditions for people to do strong work with confidence.</p>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1);border-top:1px solid rgba(231,210,155,.25);padding-top:22px;">
+          <span style="display:inline-block;width:9px;height:9px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);margin-bottom:16px;"></span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(21px,2.4vw,28px);line-height:1.14;margin:0 0 10px;color:#F4EFE2;">Proactive and commercially calm</h3>
+          <p style="font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:rgba(244,239,226,.74);margin:0;text-wrap:pretty;">I look ahead, spot pressure points early and keep delivery on track without creating noise or confusion around the team.</p>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,.84,.44,1),transform .85s cubic-bezier(.16,.84,.44,1);border-top:1px solid rgba(231,210,155,.25);padding-top:22px;">
+          <span style="display:inline-block;width:9px;height:9px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);margin-bottom:16px;"></span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(21px,2.4vw,28px);line-height:1.14;margin:0 0 10px;color:#F4EFE2;">Creative with operational grip</h3>
+          <p style="font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:rgba(244,239,226,.74);margin:0;text-wrap:pretty;">I enjoy shaping ideas, but I am most useful when those ideas need turning into partner-ready tools, brand systems and practical execution plans.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ AI TOOLS ============ -->
-  <section style="position:relative;padding:clamp(72px,11vh,120px) clamp(24px,7vw,120px);">
+  <!-- ============ AI & TOOLS ============ -->
+  <section id="ai-tools" style="position:relative;padding:clamp(72px,11vh,120px) clamp(24px,7vw,120px);">
     <div style="max-width:1180px;margin:0 auto;text-align:center;">
       <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease;margin-bottom:clamp(34px,5vh,52px);">
         <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:16px;">
           <span style="display:inline-block;width:7px;height:7px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>
-          <span style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:#8C6E3A;font-weight:600;">AI Tools &amp; Platforms</span>
+          <span style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:#8C6E3A;font-weight:600;">AI &amp; Commercial Tools</span>
         </div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,4.4vw,52px);line-height:1.04;margin:0;color:#2B3026;">Working fluently with AI</h2>
-        <p style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;letter-spacing:.04em;color:#A89C82;margin:14px 0 0;text-transform:uppercase;font-weight:600;">Used with high competence</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,4.4vw,52px);line-height:1.04;margin:0;color:#2B3026;">AI used to improve commercial outcomes</h2>
+        <p style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(15px,1.45vw,17px);line-height:1.7;color:#4C5145;margin:18px auto 0;max-width:56ch;text-wrap:pretty;">I use AI as a working layer across brand concepting, product storytelling, VM guides, market research, pitch development, retail tools, workflow prototyping and commercial planning. The goal is not novelty. It is faster thinking, clearer communication, sharper output and better execution.</p>
+      </div>
+      <div data-stagger="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;max-width:1080px;margin:0 auto;text-align:left;">
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,.84,.44,1),transform .8s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s,background .4s;background:linear-gradient(160deg,#43523C,#33402D);border:1px solid rgba(231,210,155,.18);border-radius:16px;padding:24px 20px;box-shadow:0 18px 40px -26px rgba(43,48,38,.45);" style-hover="box-shadow:0 22px 46px -24px rgba(43,48,38,.6);border-color:rgba(231,210,155,.34);background:linear-gradient(160deg,#495941,#374430);">
+          <div style="font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:10px;">Brand &amp; concepting</div>
+          <p style="font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:rgba(244,239,226,.86);margin:0;">Rapid concept routes, naming territory, visual direction, product framing and campaign thinking developed faster without losing brand judgement.</p>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,.84,.44,1),transform .8s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s,background .4s;background:linear-gradient(160deg,#43523C,#33402D);border:1px solid rgba(231,210,155,.18);border-radius:16px;padding:24px 20px;box-shadow:0 18px 40px -26px rgba(43,48,38,.45);" style-hover="box-shadow:0 22px 46px -24px rgba(43,48,38,.6);border-color:rgba(231,210,155,.34);background:linear-gradient(160deg,#495941,#374430);">
+          <div style="font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:10px;">Retail &amp; VM tools</div>
+          <p style="font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:rgba(244,239,226,.86);margin:0;">VM guides, retail training aids, sell-in decks and partner-facing tools built more quickly, then refined into usable assets for real teams and stores.</p>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,.84,.44,1),transform .8s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s,background .4s;background:linear-gradient(160deg,#43523C,#33402D);border:1px solid rgba(231,210,155,.18);border-radius:16px;padding:24px 20px;box-shadow:0 18px 40px -26px rgba(43,48,38,.45);" style-hover="box-shadow:0 22px 46px -24px rgba(43,48,38,.6);border-color:rgba(231,210,155,.34);background:linear-gradient(160deg,#495941,#374430);">
+          <div style="font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:10px;">Research &amp; planning</div>
+          <p style="font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:rgba(244,239,226,.86);margin:0;">Used for market scanning, competitor review, range thinking, pitch structuring and commercial planning so early-stage work starts sharper and moves faster.</p>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,.84,.44,1),transform .8s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s,background .4s;background:linear-gradient(160deg,#43523C,#33402D);border:1px solid rgba(231,210,155,.18);border-radius:16px;padding:24px 20px;box-shadow:0 18px 40px -26px rgba(43,48,38,.45);" style-hover="box-shadow:0 22px 46px -24px rgba(43,48,38,.6);border-color:rgba(231,210,155,.34);background:linear-gradient(160deg,#495941,#374430);">
+          <div style="font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:10px;">Workflow prototyping</div>
+          <p style="font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.62;color:rgba(244,239,226,.86);margin:0;">Useful for testing simple workflows, shaping reusable templates and exploring practical operating improvements before time is spent building them fully.</p>
+        </div>
+      </div>
+      <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .9s ease .08s,transform .9s ease .08s;margin-top:clamp(38px,5vh,48px);">
+        <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:16px;">Platforms I work with confidently</div>
       </div>
       <div data-stagger="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;max-width:920px;margin:0 auto;">
-        <sc-for list="{{ aiTools }}" as="t" hint-placeholder-count="5">
-          <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,.84,.44,1),transform .8s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s;display:flex;flex-direction:column;align-items:center;gap:12px;background:rgba(255,255,255,.5);border:1px solid rgba(140,110,58,.2);border-radius:14px;padding:26px 16px;" style-hover="box-shadow:0 18px 40px -26px rgba(140,110,58,.55);border-color:rgba(184,147,85,.5);">
-            <span style="display:inline-block;width:11px;height:11px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>
-            <span style="font-family:'Hanken Grotesk',sans-serif;font-size:16px;font-weight:600;color:#3C4A35;">{{ t }}</span>
-          </div>
-        </sc-for>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,.84,.44,1),transform .8s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s;display:flex;flex-direction:column;align-items:center;gap:12px;background:rgba(255,255,255,.5);border:1px solid rgba(140,110,58,.2);border-radius:14px;padding:26px 16px;" style-hover="box-shadow:0 18px 40px -26px rgba(140,110,58,.55);border-color:rgba(184,147,85,.5);"><span style="display:inline-block;width:11px;height:11px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span><span style="font-family:'Hanken Grotesk',sans-serif;font-size:16px;font-weight:600;color:#3C4A35;">ChatGPT</span></div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,.84,.44,1),transform .8s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s;display:flex;flex-direction:column;align-items:center;gap:12px;background:rgba(255,255,255,.5);border:1px solid rgba(140,110,58,.2);border-radius:14px;padding:26px 16px;" style-hover="box-shadow:0 18px 40px -26px rgba(140,110,58,.55);border-color:rgba(184,147,85,.5);"><span style="display:inline-block;width:11px;height:11px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span><span style="font-family:'Hanken Grotesk',sans-serif;font-size:16px;font-weight:600;color:#3C4A35;">Codex</span></div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,.84,.44,1),transform .8s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s;display:flex;flex-direction:column;align-items:center;gap:12px;background:rgba(255,255,255,.5);border:1px solid rgba(140,110,58,.2);border-radius:14px;padding:26px 16px;" style-hover="box-shadow:0 18px 40px -26px rgba(140,110,58,.55);border-color:rgba(184,147,85,.5);"><span style="display:inline-block;width:11px;height:11px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span><span style="font-family:'Hanken Grotesk',sans-serif;font-size:16px;font-weight:600;color:#3C4A35;">Claude</span></div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,.84,.44,1),transform .8s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s;display:flex;flex-direction:column;align-items:center;gap:12px;background:rgba(255,255,255,.5);border:1px solid rgba(140,110,58,.2);border-radius:14px;padding:26px 16px;" style-hover="box-shadow:0 18px 40px -26px rgba(140,110,58,.55);border-color:rgba(184,147,85,.5);"><span style="display:inline-block;width:11px;height:11px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span><span style="font-family:'Hanken Grotesk',sans-serif;font-size:16px;font-weight:600;color:#3C4A35;">Gemini</span></div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,.84,.44,1),transform .8s cubic-bezier(.16,.84,.44,1),box-shadow .4s,border-color .4s;display:flex;flex-direction:column;align-items:center;gap:12px;background:rgba(255,255,255,.5);border:1px solid rgba(140,110,58,.2);border-radius:14px;padding:26px 16px;" style-hover="box-shadow:0 18px 40px -26px rgba(140,110,58,.55);border-color:rgba(184,147,85,.5);"><span style="display:inline-block;width:11px;height:11px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span><span style="font-family:'Hanken Grotesk',sans-serif;font-size:16px;font-weight:600;color:#3C4A35;">Perplexity</span></div>
       </div>
       <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .9s ease .1s,transform .9s ease .1s;display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(20px,5vw,64px);margin-top:clamp(48px,7vh,72px);padding-top:clamp(36px,5vh,52px);border-top:1px solid rgba(140,110,58,.2);">
         <div style="text-align:center;"><div style="font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:7px;">Languages</div><div style="font-family:'Hanken Grotesk',sans-serif;font-size:15px;color:#4C5145;">Native English · Intermediate Spanish · Basic German</div></div>
@@ -890,14 +1085,15 @@
   </section>
 
   <!-- ============ CLOSING / CONTACT (sage) ============ -->
-  <section style="position:relative;background:linear-gradient(160deg,#33402D,#222C1D);padding:clamp(80px,13vh,150px) clamp(24px,7vw,120px) clamp(56px,8vh,80px);overflow:hidden;">
+  <section id="contact" style="position:relative;background:linear-gradient(160deg,#33402D,#222C1D);padding:clamp(80px,13vh,150px) clamp(24px,7vw,120px) clamp(56px,8vh,80px);overflow:hidden;">
     <div data-parallax="0.16" style="position:absolute;left:50%;top:-20%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(220px,38vw,560px);line-height:.8;color:rgba(231,210,155,.05);pointer-events:none;user-select:none;">NJ</div>
     <div style="position:relative;z-index:2;max-width:900px;margin:0 auto;text-align:center;">
 <div data-reveal="" style="opacity:0;transform:translateY(28px);transition:opacity 1s ease .1s,transform 1s ease .1s;">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(38px,6.5vw,84px);line-height:.98;letter-spacing:-.02em;margin:0 0 14px;color:#F4EFE2;">Let's build<br>something with <span style="background:linear-gradient(110deg,#9C7B43,#E7D29B 30%,#C9A96A 52%,#F0E0B0 72%,#9C7B43);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 8s linear infinite;">brand at its heart</span>.</h2>
+        <h2 aria-label="Let's build something with brand at its heart." style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(38px,6.5vw,84px);line-height:.98;letter-spacing:-.02em;margin:0 0 14px;color:#F4EFE2;">Let's build<br>something with <span style="background:linear-gradient(110deg,#9C7B43,#E7D29B 30%,#C9A96A 52%,#F0E0B0 72%,#9C7B43);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 8s linear infinite;">brand at its heart</span>.</h2>
         <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:clamp(34px,5vh,48px);">
-          <a href="mailto:nw.jones87@gmail.com" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:linear-gradient(135deg,#C9A96A,#E7D29B);color:#2B3026;border-radius:999px;padding:15px 28px;font-family:'Hanken Grotesk',sans-serif;font-size:15px;font-weight:700;box-shadow:0 16px 38px -16px rgba(231,210,155,.6);transition:transform .3s;" style-hover="transform:translateY(-3px);">nw.jones87@gmail.com</a>
-          <a href="tel:+447470039114" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:transparent;color:#F4EFE2;border:1px solid rgba(231,210,155,.4);border-radius:999px;padding:15px 28px;font-family:'Hanken Grotesk',sans-serif;font-size:15px;font-weight:600;transition:all .3s;" style-hover="background:rgba(231,210,155,.12);border-color:#E7D29B;">+44 (0)7470 039114</a>
+          <a href="mailto:nw.jones87@gmail.com" aria-label="Email Nick Jones" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:linear-gradient(135deg,#C9A96A,#E7D29B);color:#2B3026;border-radius:999px;padding:15px 28px;font-family:'Hanken Grotesk',sans-serif;font-size:15px;font-weight:700;box-shadow:0 16px 38px -16px rgba(231,210,155,.6);transition:transform .3s;" style-hover="transform:translateY(-3px);">Email Nick</a>
+          <a href="https://www.linkedin.com/in/nick-jones-5809b671/" target="_blank" rel="noreferrer" aria-label="Open Nick Jones LinkedIn profile" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:transparent;color:#F4EFE2;border:1px solid rgba(231,210,155,.4);border-radius:999px;padding:15px 28px;font-family:'Hanken Grotesk',sans-serif;font-size:15px;font-weight:600;transition:all .3s;" style-hover="background:rgba(231,210,155,.12);border-color:#E7D29B;">LinkedIn</a>
+          <a href="assets/Nick-Jones-CV.pdf" download="Nick-Jones-CV.pdf" aria-label="Download Nick Jones CV as a PDF" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:rgba(244,239,226,.1);color:#F4EFE2;border:1px solid rgba(231,210,155,.4);border-radius:999px;padding:15px 28px;font-family:'Hanken Grotesk',sans-serif;font-size:15px;font-weight:600;transition:all .3s;" style-hover="background:rgba(231,210,155,.16);border-color:#E7D29B;">Download CV</a>
           <span style="display:inline-flex;align-items:center;gap:10px;color:rgba(244,239,226,.7);border:1px solid rgba(231,210,155,.4);border-radius:999px;padding:15px 28px;font-family:'Hanken Grotesk',sans-serif;font-size:15px;font-weight:600;">Manchester, UK</span>
         </div>
       </div>
@@ -914,7 +1110,8 @@ class Component extends DCLogic {
     const root = document.getElementById('cv-root');
     if (!root) return;
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const motion = (this.props.motionEnabled !== false) && !reduce;
+    const mobileLike = window.matchMedia && window.matchMedia('(max-width: 767px)').matches;
+    const motion = (this.props.motionEnabled !== false) && !reduce && !mobileLike;
 
     // Reveal-on-scroll via CSS scroll-driven animations (survives React re-renders,
     // unlike direct style mutation). Falls back to instantly-visible when unsupported.
@@ -949,6 +1146,10 @@ class Component extends DCLogic {
         if (sheen) sheen.style.animationDelay = (i * 0.55) + 's';
         const pulse = card.querySelector('span[style*="ach-pulse"]');
         if (pulse) pulse.style.animationDelay = (i * 0.28) + 's';
+      });
+      Array.from(root.querySelectorAll('img')).forEach((img) => {
+        if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+        if (!img.closest('#top') && !img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
       });
     };
     this._sizeSlots();
@@ -1409,10 +1610,17 @@ class Component extends DCLogic {
     if (sections.length < 2) return;
     const hero = sections[0];
 
-    // curated jump targets: [section index, label]
-    const navMap = [[1, 'Profile'], [3, 'Strengths'], [5, 'Journey'], [7, 'Achievements'], [8, 'Projects'], [9, 'Approach'], [11, 'Contact']]
-      .filter(([i]) => sections[i]);
-    navMap.forEach(([i], k) => { if (!sections[i].id) sections[i].id = 'cv-sec-' + i; });
+    // curated jump targets with stable anchors for the main recruiter scan path
+    const navMap = [
+      { el: document.getElementById('profile') || sections[1], label: 'Profile' },
+      { el: document.getElementById('experience') || sections[5], label: 'Experience' },
+      { el: document.getElementById('achievements') || sections[7], label: 'Achievements' },
+      { el: document.getElementById('projects') || sections[8], label: 'Projects' },
+      { el: document.getElementById('ai-tools') || sections[10], label: 'AI & Tools' },
+      { el: document.getElementById('testimonials') || root.querySelector('[data-ref-ring]')?.closest('[data-reveal]'), label: 'Testimonials' },
+      { el: document.getElementById('contact') || sections[11], label: 'Contact' }
+    ].filter(item => item.el);
+    navMap.forEach((item, i) => { if (!item.el.id) item.el.id = 'cv-jump-' + i; });
 
     const dock = document.createElement('div');
     dock.id = 'cv-dock';
@@ -1423,25 +1631,65 @@ class Component extends DCLogic {
       + 'transform:translateY(-102%);opacity:0;transition:transform .5s cubic-bezier(.16,.84,.44,1),opacity .4s ease;will-change:transform,opacity;';
 
     // ---- left cluster: circular download button + green brand pill ----
-    // ---- one-time Google Translate integration (real page conversion) ----
-    if (!window.__gtInjected) {
-      window.__gtInjected = true;
-      window.googleTranslateElementInit = function () {
-        try { new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,es,zh-CN', autoDisplay: false }, 'google_translate_element'); } catch (e) {}
-      };
-      const gdiv = document.createElement('div'); gdiv.id = 'google_translate_element'; gdiv.style.cssText = 'position:fixed;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;'; document.body.appendChild(gdiv);
-      const s = document.createElement('script'); s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; document.body.appendChild(s);
-      const st = document.createElement('style');
-      st.textContent = '.goog-te-banner-frame,.skiptranslate iframe{display:none!important;} body{top:0!important;position:static!important;} #goog-gt-tt,.goog-te-balloon-frame{display:none!important;} .goog-text-highlight{background:none!important;box-shadow:none!important;} font{background:none!important;box-shadow:none!important;}';
-      document.head.appendChild(st);
-    }
+    // ---- lazy Google Translate integration (load only when needed) ----
+    let gtReady = null;
+    const ensureTranslateLoaded = () => {
+      if (window.google && window.google.translate && document.querySelector('.goog-te-combo')) return Promise.resolve();
+      if (gtReady) return gtReady;
+      gtReady = new Promise((resolve, reject) => {
+        if (!document.getElementById('google_translate_element')) {
+          const gdiv = document.createElement('div');
+          gdiv.id = 'google_translate_element';
+          gdiv.style.cssText = 'position:fixed;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;';
+          document.body.appendChild(gdiv);
+        }
+        if (!document.getElementById('gt-inline-fixes')) {
+          const st = document.createElement('style');
+          st.id = 'gt-inline-fixes';
+          st.textContent = '.goog-te-banner-frame,.skiptranslate iframe{display:none!important;} body{top:0!important;position:static!important;} #goog-gt-tt,.goog-te-balloon-frame{display:none!important;} .goog-text-highlight{background:none!important;box-shadow:none!important;} font{background:none!important;box-shadow:none!important;}';
+          document.head.appendChild(st);
+        }
+
+        const finish = (tries) => {
+          if (document.querySelector('.goog-te-combo')) { resolve(); return; }
+          if (tries <= 0) { resolve(); return; }
+          setTimeout(() => finish(tries - 1), 250);
+        };
+
+        if (window.google && window.google.translate) {
+          try { new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,es,zh-CN', autoDisplay: false }, 'google_translate_element'); } catch (e) {}
+          finish(18);
+          return;
+        }
+
+        window.googleTranslateElementInit = function () {
+          try { new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,es,zh-CN', autoDisplay: false }, 'google_translate_element'); } catch (e) {}
+          finish(18);
+        };
+
+        if (!document.querySelector('script[data-google-translate]')) {
+          const s = document.createElement('script');
+          s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+          s.async = true;
+          s.dataset.googleTranslate = '1';
+          s.onerror = () => reject(new Error('translate-load-failed'));
+          document.body.appendChild(s);
+        } else {
+          finish(18);
+        }
+      }).catch(() => {});
+      return gtReady;
+    };
     const setGoogLang = (code) => {
-      const trySet = (tries) => {
-        const combo = document.querySelector('.goog-te-combo');
-        if (combo) { combo.value = code; combo.dispatchEvent(new Event('change')); return; }
-        if (tries > 0) setTimeout(() => trySet(tries - 1), 300);
-      };
-      trySet(24);
+      const lang = code || 'en';
+      ensureTranslateLoaded().then(() => {
+        const trySet = (tries) => {
+          const combo = document.querySelector('.goog-te-combo');
+          if (combo) { combo.value = lang; combo.dispatchEvent(new Event('change')); return; }
+          if (tries > 0) setTimeout(() => trySet(tries - 1), 300);
+        };
+        trySet(24);
+      });
     };
 
     // ---- left cluster: language switcher + smaller circular CV download button ----
@@ -1458,7 +1706,7 @@ class Component extends DCLogic {
     langBtn.setAttribute('aria-label', 'Translate page');
     langBtn.setAttribute('aria-haspopup', 'menu');
     langBtn.setAttribute('aria-expanded', 'false');
-    langBtn.style.cssText = 'display:inline-flex;align-items:center;justify-content:center;height:38px;width:38px;flex:none;'
+    langBtn.style.cssText = 'display:inline-flex;align-items:center;justify-content:center;height:42px;width:42px;flex:none;'
       + 'cursor:pointer;border-radius:999px;padding:0;background:rgba(231,210,155,.1);border:1.5px solid rgba(231,210,155,.5);transition:background .3s,border-color .3s;';
     langBtn.innerHTML = ukFlag;
     langBtn.addEventListener('mouseenter', () => { langBtn.style.background = 'rgba(231,210,155,.2)'; langBtn.style.borderColor = 'rgba(231,210,155,.8)'; });
@@ -1469,7 +1717,7 @@ class Component extends DCLogic {
     langMenu.style.cssText = 'position:absolute;top:48px;left:0;min-width:184px;display:none;flex-direction:column;padding:7px;border-radius:14px;z-index:60;'
       + 'background:linear-gradient(180deg,rgba(60,74,53,.98),rgba(44,56,38,.98));-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);'
       + 'border:1px solid rgba(231,210,155,.28);box-shadow:0 22px 46px -18px rgba(20,26,16,.7);opacity:0;transform:translateY(-8px) scale(.98);pointer-events:none;transition:opacity .22s,transform .22s;transform-origin:top left;';
-    const langs = [['', 'English', 'English'], ['es', 'Español', 'Spanish'], ['zh-CN', '中文', 'Standard Chinese']];
+    const langs = [['en', 'English', 'English'], ['es', 'Español', 'Spanish'], ['zh-CN', '中文', 'Standard Chinese']];
     langs.forEach(([code, native, name]) => {
       const it = document.createElement('button');
       it.type = 'button';
@@ -1486,6 +1734,7 @@ class Component extends DCLogic {
       langOpen = true;
       langBtn.setAttribute('aria-expanded', 'true');
       langMenu.style.display = 'flex';
+      ensureTranslateLoaded();
       requestAnimationFrame(() => {
         langMenu.style.opacity = '1';
         langMenu.style.transform = 'translateY(0) scale(1)';
@@ -1512,7 +1761,7 @@ class Component extends DCLogic {
     const dlBtn = document.createElement('button');
     dlBtn.type = 'button';
     dlBtn.setAttribute('aria-label', 'Download CV');
-    dlBtn.style.cssText = 'display:inline-flex;align-items:center;height:38px;width:38px;flex:none;overflow:hidden;'
+    dlBtn.style.cssText = 'display:inline-flex;align-items:center;height:42px;width:42px;flex:none;overflow:hidden;'
       + 'cursor:pointer;border-radius:999px;padding:0;'
       + 'background:rgba(231,210,155,.1);border:1.5px solid rgba(231,210,155,.5);'
       + 'transition:width .38s cubic-bezier(.16,.84,.44,1),background .3s,border-color .3s;';
@@ -1521,8 +1770,8 @@ class Component extends DCLogic {
       + '<span style="position:absolute;right:4px;bottom:3px;width:12px;height:12px;border-radius:50%;background:#E7D29B;color:#2E3A28;font-size:10px;font-weight:900;line-height:12px;text-align:center;">\u2193</span>'
       + '</span>'
       + '<span class="dl-label" style="white-space:nowrap;opacity:0;font-family:\'Hanken Grotesk\',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#E7D29B;padding-right:16px;transition:opacity .25s ease;">Download CV</span>';
-    dlBtn.addEventListener('mouseenter', () => { dlBtn.style.width = '168px'; dlBtn.style.background = 'rgba(231,210,155,.2)'; dlBtn.style.borderColor = 'rgba(231,210,155,.8)'; dlBtn.querySelector('.dl-label').style.opacity = '1'; });
-    dlBtn.addEventListener('mouseleave', () => { dlBtn.style.width = '38px'; dlBtn.style.background = 'rgba(231,210,155,.1)'; dlBtn.style.borderColor = 'rgba(231,210,155,.5)'; dlBtn.querySelector('.dl-label').style.opacity = '0'; });
+    dlBtn.addEventListener('mouseenter', () => { dlBtn.style.width = '172px'; dlBtn.style.background = 'rgba(231,210,155,.2)'; dlBtn.style.borderColor = 'rgba(231,210,155,.8)'; dlBtn.querySelector('.dl-label').style.opacity = '1'; });
+    dlBtn.addEventListener('mouseleave', () => { dlBtn.style.width = '42px'; dlBtn.style.background = 'rgba(231,210,155,.1)'; dlBtn.style.borderColor = 'rgba(231,210,155,.5)'; dlBtn.querySelector('.dl-label').style.opacity = '0'; });
     dlBtn.addEventListener('click', () => { const a = document.createElement('a'); a.href = 'assets/Nick-Jones-CV.pdf'; a.download = 'Nick-Jones-CV.pdf'; document.body.appendChild(a); a.click(); a.remove(); });
     leftCluster.appendChild(dlBtn);
     dock.appendChild(leftCluster);
@@ -1541,8 +1790,8 @@ class Component extends DCLogic {
 
     const dockH = 60;
     const scrollY = () => window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    const scrollToSec = (i) => {
-      const y = sections[i].getBoundingClientRect().top + scrollY() - dockH + 1;
+    const scrollToSec = (el) => {
+      const y = el.getBoundingClientRect().top + scrollY() - dockH + 1;
       window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
     };
 
@@ -1551,18 +1800,18 @@ class Component extends DCLogic {
     const nav = document.createElement('nav');
     nav.style.cssText = 'display:flex;align-items:center;justify-content:flex-end;justify-self:end;gap:clamp(10px,1.2vw,18px);min-width:0;';
     const links = [];
-    navMap.forEach(([i, label]) => {
+    navMap.forEach((item, index) => {
       const a = document.createElement('button');
       a.type = 'button';
-      a.dataset.sec = i;
-      a.textContent = label;
+      a.dataset.sec = String(index);
+      a.textContent = item.label;
       a.style.cssText = "position:relative;background:none;border:none;cursor:pointer;font-family:'Hanken Grotesk',sans-serif;font-size:clamp(10px,.78vw,11px);font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:rgba(244,239,226,.72);padding:6px 0;transition:color .25s;white-space:nowrap;";
       const ul = document.createElement('span');
       ul.style.cssText = 'position:absolute;left:0;right:100%;bottom:0;height:2px;border-radius:2px;background:linear-gradient(90deg,#B89355,#E7D29B);transition:right .3s cubic-bezier(.16,.84,.44,1);';
       a.appendChild(ul); a._ul = ul;
       a.addEventListener('mouseenter', () => { if (!a._active) a.style.color = '#E7D29B'; });
       a.addEventListener('mouseleave', () => { if (!a._active) a.style.color = 'rgba(244,239,226,.72)'; });
-      a.addEventListener('click', () => scrollToSec(i));
+      a.addEventListener('click', () => scrollToSec(item.el));
       nav.appendChild(a); links.push(a);
     });
 
@@ -1572,20 +1821,20 @@ class Component extends DCLogic {
     menuBtn.setAttribute('aria-label', 'Open section menu');
     menuBtn.setAttribute('aria-haspopup', 'menu');
     menuBtn.setAttribute('aria-expanded', 'false');
-    menuBtn.style.cssText = "display:none;align-items:center;justify-self:end;gap:8px;background:rgba(231,210,155,.14);border:1px solid rgba(231,210,155,.4);border-radius:999px;cursor:pointer;font-family:'Hanken Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#E7D29B;padding:8px 14px;";
+    menuBtn.style.cssText = "display:none;align-items:center;justify-self:end;gap:8px;min-height:42px;background:rgba(231,210,155,.14);border:1px solid rgba(231,210,155,.4);border-radius:999px;cursor:pointer;font-family:'Hanken Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#E7D29B;padding:10px 16px;";
     menuBtn.innerHTML = 'Jump to <span style="font-size:9px;">\u25BC</span>';
     const menu = document.createElement('div');
     menu.style.cssText = 'position:absolute;top:58px;right:clamp(16px,5vw,40px);min-width:190px;display:none;flex-direction:column;padding:8px;border-radius:14px;'
       + 'background:linear-gradient(180deg,rgba(245,240,228,.97),rgba(240,233,215,.97));-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);'
       + 'border:1px solid rgba(140,110,58,.2);box-shadow:0 20px 44px -18px rgba(28,34,22,.55);opacity:0;transform:translateY(-8px) scale(.98);pointer-events:none;transition:opacity .25s,transform .25s;transform-origin:top right;';
-    navMap.forEach(([i, label]) => {
+    navMap.forEach((item) => {
       const it = document.createElement('button');
       it.type = 'button';
-      it.textContent = label;
+      it.textContent = item.label;
       it.style.cssText = "text-align:left;background:none;border:none;cursor:pointer;font-family:'Hanken Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;color:#3C4A35;padding:10px 12px;border-radius:9px;transition:background .2s,color .2s;";
       it.addEventListener('mouseenter', () => { it.style.background = 'rgba(184,147,85,.16)'; it.style.color = '#8C6E3A'; });
       it.addEventListener('mouseleave', () => { it.style.background = 'none'; it.style.color = '#3C4A35'; });
-      it.addEventListener('click', () => { scrollToSec(i); closeMenu(); });
+      it.addEventListener('click', () => { scrollToSec(item.el); closeMenu(); });
       menu.appendChild(it);
     });
     let menuOpen = false;
@@ -1646,7 +1895,7 @@ class Component extends DCLogic {
         // active-section highlight
         const probe = dockH + 12;
         let active = -1;
-        navMap.forEach(([i]) => { if (sections[i].getBoundingClientRect().top <= probe) active = i; });
+        navMap.forEach((item, index) => { if (item.el.getBoundingClientRect().top <= probe) active = index; });
         links.forEach(a => {
           const on = Number(a.dataset.sec) === active;
           if (on !== a._active) {
