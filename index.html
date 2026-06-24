@@ -62,8 +62,14 @@
   .hero-proof-row{overflow:hidden;width:100%;}
   .hero-proof-pill{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;background:linear-gradient(145deg,rgba(60,74,53,.96),rgba(43,57,38,.94));border:1.5px solid rgba(231,210,155,.34);border-radius:999px;box-shadow:0 18px 42px -24px rgba(43,57,38,.7),inset 0 1px 0 rgba(255,255,255,.08);font-family:'Hanken Grotesk',sans-serif;font-size:clamp(11px,1.15vw,12.5px);letter-spacing:.12em;text-transform:uppercase;color:#F4EFE2;font-weight:700;white-space:nowrap;}
   .hero-proof-pill--wide{padding-inline:30px;}
-  #projects [data-track] > div{cursor:pointer;transition:transform .35s cubic-bezier(.16,.84,.44,1),filter .35s ease;transform-origin:center top;}
+  #projects [data-carousel]{margin-bottom:clamp(40px,5vh,56px) !important;}
+  #projects > div[data-reveal]{margin-bottom:clamp(12px,1.7vh,18px) !important;}
+  #projects [data-track]{align-items:flex-start !important;gap:clamp(12px,1.5vw,19px) !important;}
+  #projects [data-track] > div{width:clamp(143px,15.3vw,185px) !important;cursor:pointer;transition:transform .35s cubic-bezier(.16,.84,.44,1),filter .35s ease;transform-origin:center top;}
   #projects [data-track] > div:hover,#projects [data-track] > div[data-project-expanded="true"]{transform:scale(1.055);z-index:4;}
+  #projects [data-track] > div > div:last-child{margin-top:12px !important;}
+  #projects [data-track] h3{font-size:clamp(17px,1.75vw,22px) !important;line-height:1.1 !important;text-wrap:balance;}
+  #projects [data-track] p{font-size:12.5px !important;line-height:1.48 !important;text-wrap:pretty;}
   #projects [data-scroll-gutter]{touch-action:pan-y;}
   @media (max-width:900px){
     .hero-cta-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
@@ -118,7 +124,7 @@
         <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.16,.84,.44,1) .24s,transform 1s cubic-bezier(.16,.84,.44,1) .24s;width:100%;">
           <div class="hero-cta-grid">
             <a href="assets/Nick-Jones-CV.pdf" download="Nick-Jones-CV.pdf" aria-label="Download PDF CV" class="hero-cta-btn" style="background:linear-gradient(135deg,#C9A96A,#E7D29B);border:1px solid rgba(140,110,58,.25);color:#2B3026;box-shadow:0 18px 38px -20px rgba(184,147,85,.8);" style-hover="transform:translateY(-2px);box-shadow:0 22px 46px -18px rgba(184,147,85,.9);"><span class="cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg></span><span class="cta-label">Download CV</span></a>
-            <a href="#projects" aria-label="Jump to key projects" class="hero-cta-btn" style="background:rgba(60,74,53,.08);border:1px solid rgba(60,74,53,.24);color:#3C4A35;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;"><span class="cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H10l2 2h5.5A2.5 2.5 0 0 1 20 9.5v7A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z"></path><path d="M8 13h8"></path></svg></span><span class="cta-label">Key Projects</span></a>
+            <a href="#projects" aria-label="Jump to portfolio" class="hero-cta-btn" style="background:rgba(60,74,53,.08);border:1px solid rgba(60,74,53,.24);color:#3C4A35;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;"><span class="cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H10l2 2h5.5A2.5 2.5 0 0 1 20 9.5v7A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z"></path><path d="M8 13h8"></path></svg></span><span class="cta-label">Portfolio</span></a>
             <a href="#contact" aria-label="Jump to contact details" class="hero-cta-btn" style="background:rgba(255,255,255,.72);border:1px solid rgba(140,110,58,.32);color:#3C4A35;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;"><span class="cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5h16v11H4z"></path><path d="m4 7 8 6 8-6"></path></svg></span><span class="cta-label">Contact Nick</span></a>
             <a href="https://www.linkedin.com/in/nick-jones-5809b671/" target="_blank" rel="noreferrer" aria-label="Open Nick Jones LinkedIn profile" class="hero-cta-btn" style="background:rgba(255,255,255,.72);border:1px solid rgba(140,110,58,.32);color:#3C4A35;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;"><span class="cta-icon cta-icon--linkedin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 8.9H3.4v11h3.2zM5 7.4a1.86 1.86 0 1 0 0-3.72 1.86 1.86 0 0 0 0 3.72zM20.6 13.8c0-3.28-1.75-4.8-4.08-4.8a3.52 3.52 0 0 0-3.18 1.74V8.9h-3.08v11h3.2v-5.44c0-1.44.27-2.83 2.05-2.83 1.75 0 1.77 1.64 1.77 2.92v5.35h3.2z"></path></svg></span><span class="cta-label">LinkedIn</span></a>
           </div>
@@ -669,22 +675,22 @@
     <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(140,110,58,.32),rgba(140,110,58,0));"></span>
   </div>
 
-  <!-- ============ PROJECTS & ACTIVITIES (carousel) ============ -->
+  <!-- ============ COMMERCIAL PORTFOLIO (carousel) ============ -->
   <section id="projects" style="position:relative;padding:clamp(8px,2vh,20px) 0 clamp(72px,11vh,130px);overflow:hidden;">
     <div style="max-width:1180px;margin:0 auto;padding:0 clamp(24px,7vw,120px);">
       <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease;margin-bottom:clamp(30px,4vh,46px);">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
           <span style="display:inline-block;width:7px;height:7px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>
-          <span style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:#8C6E3A;font-weight:600;">Selected Projects &amp; Commercial Tools</span>
+          <span style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:#8C6E3A;font-weight:600;">Selected Commercial Work</span>
         </div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(18px,4vw,46px);line-height:1.08;letter-spacing:-.01em;margin:0;color:#2B3026;max-width:none;">Selected Projects &amp; Commercial Tools</h2>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(18px,4vw,46px);line-height:1.08;letter-spacing:-.01em;margin:0;color:#2B3026;max-width:none;">Commercial Portfolio</h2>
       </div>
     </div>
 
     <div data-reveal="" style="opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto clamp(12px,2vh,20px);padding:0 clamp(24px,7vw,120px);">
       <div style="display:flex;align-items:center;gap:10px;">
         <span style="display:inline-block;width:6px;height:6px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>
-        <span style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#8C6E3A;font-weight:700;">Commercial Tools</span>
+        <span style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#8C6E3A;font-weight:700;">Sales &amp; Training Toolkits</span>
       </div>
     </div>
     <div data-carousel="" data-row="commercial-tools" style="position:relative;cursor:grab;margin-bottom:clamp(34px,5vh,60px);">
@@ -692,44 +698,84 @@
       <div data-scroll-gutter="" aria-hidden="true" style="position:absolute;right:0;top:0;bottom:0;width:clamp(48px,12vw,168px);z-index:3;pointer-events:auto;touch-action:pan-y;cursor:default;background:linear-gradient(270deg,#EFE7D8,rgba(239,231,216,0));"></div>
       <div data-track="" style="display:flex;gap:clamp(14px,1.8vw,22px);width:max-content;padding:6px clamp(64px,13vw,180px);will-change:transform;">
 <div style="flex:none;width:clamp(168px,18vw,218px);">
-          <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
-            <div style="position:absolute;inset:0;">
-              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-salestools-1.webp" alt="Ernest Jones price guide" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-              </div>
-              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:ripple-swap 8s ease-in-out infinite;animation-delay:-7s;clip-path:circle(0% at 50% 50%);will-change:clip-path;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-salestools-2.webp" alt="Charm Club Carriers Connect price list" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-              </div>
+          <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+            <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
+              <img src="assets/optimized/proj-sales-tools-price-guides.jpg" alt="Thomas Sabo account-specific price guide booklets for key jewellery partners" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
           </div>
           <div style="margin-top:16px;">
             <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Ernest Jones &middot; Charm Club</div>
             <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Account-specific sales tools</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Bespoke price guides and product line sheets per account.</p>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Bespoke price guides and product line sheets tailored by account.</p>
           </div>
         </div>
 <div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
             <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
-              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="ts-training" role="img" aria-label="Retail and wholesale training workshop photo" src="assets/optimized/proj-training-1.jpg" shape="rounded" radius="14" fit="cover" placeholder="Drop a photo" style="display:block;width:100%;height:100%;" hint-size="100%,100%"></x-import>
+              <img src="assets/optimized/proj-ai-partner-dashboard.jpg" alt="Thomas Sabo partner analytics dashboard for John Lewis stock and sales performance" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">AI &middot; Partner Analytics</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(18px,2vw,23px);line-height:1.08;margin:0 0 6px;color:#2B3026;text-transform:uppercase;">Bespoke Build AI Dashboards for Partners</h3>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">To manage and review stock and sales performance.</p>
+          </div>
+        </div>
+<div style="flex:none;width:clamp(168px,18vw,218px);">
+          <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+            <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
+              <img src="assets/optimized/proj-training-1.jpg" alt="Retail and wholesale training workshop photo" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+              <img src="assets/optimized/proj-training-workshop.jpg" alt="Thomas Sabo wholesale training presentation with retail teams" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;filter:blur(14px);transform:scale(1.025);animation:project-blur-cycle 12s ease-in-out infinite;">
+              <img src="assets/optimized/proj-training-brand-book.jpg" alt="Thomas Sabo Brand Training 2025 booklet cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;filter:blur(14px);transform:scale(1.025);animation:project-blur-cycle 12s ease-in-out infinite;animation-delay:-4s;">
             </div>
           </div>
           <div style="margin-top:16px;">
             <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo</div>
             <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Retail / wholesale training</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Product, brand and selling training for retail teams and wholesale partners.</p>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Product, brand and selling guides for retail and wholesale teams.</p>
           </div>
         </div>
 <div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
             <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
-              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="proj-1" role="img" aria-label="Visual merchandising guide for a retail partner" shape="rounded" radius="14" fit="cover" placeholder="Drop a photo" style="display:block;width:100%;height:100%;" hint-size="100%,100%"></x-import>
+              <img src="assets/optimized/proj-brand-training-2025.jpg" alt="Thomas Sabo Brand Training 2025 client training booklet cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Brand Training</h3>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Client-ready brand training resource for partner teams.</p>
+          </div>
+        </div>
+<div style="flex:none;width:clamp(168px,18vw,218px);">
+          <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+            <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
+              <div style="position:absolute;inset:0;">
+                <img src="assets/optimized/proj-vm-guides-stack.jpg" alt="Thomas Sabo bespoke visual merchandising guide booklets for partner accounts" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+              <div style="position:absolute;inset:0;opacity:0;filter:blur(14px);transform:scale(1.025);animation:project-blur-fade 9s ease-in-out infinite;">
+                <img src="assets/optimized/proj-vm-guide-principles.jpg" alt="Thomas Sabo VM guide page showing window and display principles" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
             </div>
           </div>
           <div style="margin-top:16px;">
             <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">2025</div>
             <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Bespoke VM guides per account</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Brand and visual standards translated into partner-ready guides that supported more consistent in-store execution.</p>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Partner-ready visual standards guides for consistent in-store execution.</p>
+          </div>
+        </div>
+<div style="flex:none;width:clamp(168px,18vw,218px);">
+          <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+            <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
+              <img src="assets/optimized/proj-detail-1.webp" alt="Thomas Sabo styled jewellery display detail" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+              <img src="assets/optimized/proj-detail-2.webp" alt="Thomas Sabo premium visual merchandising display detail" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;filter:blur(14px);transform:scale(1.025);animation:project-blur-cycle 12s ease-in-out infinite;">
+              <img src="assets/optimized/proj-highest-vm-standards-3.jpg" alt="Thomas Sabo jewellery display case with carefully spaced product groupings" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;filter:blur(14px);transform:scale(1.025);animation:project-blur-cycle 12s ease-in-out infinite;animation-delay:-4s;">
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;text-transform:uppercase;">HIGHEST VM STANDARDS</h3>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Premium product presentation, spacing and finish at point of sale.</p>
           </div>
         </div>
       </div>
@@ -737,7 +783,7 @@
     <div data-reveal="" style="opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto clamp(12px,2vh,20px);padding:0 clamp(24px,7vw,120px);">
       <div style="display:flex;align-items:center;gap:10px;">
         <span style="display:inline-block;width:6px;height:6px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>
-        <span style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#8C6E3A;font-weight:700;">Selected Projects</span>
+        <span style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#8C6E3A;font-weight:700;">Retail, VM &amp; Brand Activation Projects</span>
       </div>
     </div>
     <div data-carousel="" data-row="selected-projects" style="position:relative;cursor:grab;margin-bottom:clamp(34px,5vh,60px);">
@@ -825,7 +871,7 @@
           <div style="margin-top:16px;">
             <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo</div>
             <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Retail store development</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Storefront evolution across premium retail environments, balancing brand presence, signage and in-store theatre.</p>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Storefront and interior evolution across premium retail environments.</p>
           </div>
         </div>
 <div style="flex:none;width:clamp(168px,18vw,218px);">
@@ -848,7 +894,7 @@
           <div style="margin-top:16px;">
             <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo &middot; Mococo</div>
             <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Securing the UK's biggest wholesale shopfit project</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Winning and shaping a flagship wholesale environment that combined standout brand theatre with strong partner-led commercial execution.</p>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Flagship wholesale environment shaped for partner-led retail theatre.</p>
           </div>
         </div>
 <div style="flex:none;width:clamp(168px,18vw,218px);">
@@ -871,24 +917,7 @@
           <div style="margin-top:16px;">
             <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo &middot; Charm Club</div>
             <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Introducing wholesale showroom</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Creating a dedicated wholesale environment designed to host partners, present collections beautifully and support stronger commercial conversations.</p>
-          </div>
-        </div>
-<div style="flex:none;width:clamp(168px,18vw,218px);">
-          <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
-            <div style="position:absolute;inset:0;">
-              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-detail-1.webp" alt="Thomas Sabo styled display detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-              </div>
-              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:ripple-swap 8s ease-in-out infinite;animation-delay:-5s;clip-path:circle(0% at 50% 50%);will-change:clip-path;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-detail-2.webp" alt="Thomas Sabo styled display detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top:16px;">
-            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo</div>
-            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Attention to detail</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Considered styling, props and finish at point of sale.</p>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Partner showroom for collection presentation and commercial meetings.</p>
           </div>
         </div>
 <div style="flex:none;width:clamp(168px,18vw,218px);">
@@ -905,7 +934,7 @@
           <div style="margin-top:16px;">
             <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo</div>
             <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Customer events</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">In-store events and hospitality — branded experiences that build client relationships.</p>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Branded in-store events designed to deepen customer relationships.</p>
           </div>
         </div>
       </div>
@@ -913,7 +942,7 @@
     <div data-reveal="" style="opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto clamp(12px,2vh,20px);padding:0 clamp(24px,7vw,120px);">
       <div style="display:flex;align-items:center;gap:10px;">
         <span style="display:inline-block;width:6px;height:6px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>
-        <span style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#8C6E3A;font-weight:700;">Other brands &amp; freelance</span>
+        <span style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#8C6E3A;font-weight:700;">Freelance, Brand &amp; AI Projects</span>
       </div>
     </div>
     <div data-carousel="" style="position:relative;cursor:grab;margin-bottom:clamp(34px,5vh,60px);">
@@ -1164,9 +1193,7 @@ class Component extends DCLogic {
         document.querySelectorAll('[data-track] image-slot').forEach(el => {
           el.style.display = 'block'; el.style.width = '100%'; el.style.height = '100%';
         });
-        const seeds = {
-          'proj-1': 'assets/optimized/proj-vm-guides.webp'
-        };
+        const seeds = {};
         Object.keys(seeds).forEach(id => {
           const el = document.getElementById(id);
           if (el && el.getAttribute('src') !== seeds[id]) el.setAttribute('src', seeds[id]);
@@ -1647,7 +1674,7 @@ class Component extends DCLogic {
       { el: document.getElementById('profile') || sections[1], label: 'Profile' },
       { el: document.getElementById('experience') || sections[5], label: 'Experience' },
       { el: document.getElementById('achievements') || sections[7], label: 'Achievements' },
-      { el: document.getElementById('projects') || sections[8], label: 'Projects' },
+      { el: document.getElementById('projects') || sections[8], label: 'Portfolio' },
       { el: document.getElementById('ai-tools') || sections[10], label: 'AI & Tools' },
       { el: document.getElementById('testimonials') || root.querySelector('[data-ref-ring]')?.closest('[data-reveal]'), label: 'Testimonials' },
       { el: document.getElementById('contact') || sections[11], label: 'Contact' }
@@ -2739,7 +2766,7 @@ class Component extends DCLogic {
       ],
       aiTools: ['ChatGPT', 'Codex', 'Claude', 'Gemini', 'Perplexity'],
       projects: [
-        { id: 'proj-1', year: '2025', title: 'Bespoke VM guides per account', text: 'Brand & Visual Guides tailored per retail partner.', src: 'assets/optimized/proj-vm-guides.webp' },
+        { id: 'proj-1', year: '2025', title: 'Bespoke VM guides per account', text: 'Brand and visual guides tailored per retail partner.', src: 'assets/optimized/proj-vm-guides-stack.jpg' },
       ]
     };
   }
