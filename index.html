@@ -53,21 +53,28 @@
   .mq-row:hover .mq-track{animation-play-state:paused;}
   .mq-row[data-proof-marquee]:hover .mq-track{animation-play-state:running;}
   .hero-cta-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;width:min(100%,900px);margin-top:30px;}
-  .hero-cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;width:100%;text-decoration:none;border-radius:999px;padding:14px 18px;font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;transition:transform .35s,box-shadow .35s,background .35s,color .35s,border-color .35s;text-align:center;line-height:1.15;}
-  .hero-cta-btn .cta-icon{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;font-size:15px;line-height:1;flex:none;}
+  .hero-cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;width:100%;text-decoration:none;border-radius:999px;padding:14px 18px;font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;transition:transform .35s,box-shadow .35s,background .35s,color .35s,border-color .35s;text-align:center;line-height:1.15;}
+  .hero-cta-btn .cta-icon{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;border:1px solid currentColor;background:rgba(255,255,255,.18);font-size:15px;line-height:1;flex:none;}
+  .hero-cta-btn .cta-icon svg{width:16px;height:16px;display:block;stroke:currentColor;}
+  .hero-cta-btn .cta-icon--linkedin svg{stroke:none;fill:currentColor;width:15px;height:15px;}
   .hero-cta-btn .cta-label{display:inline-block;max-width:100%;}
-  .hero-proof-marquees{display:flex;flex-direction:column;gap:14px;width:min(100vw,1080px);margin-top:24px;}
+  .hero-proof-marquees{display:flex;flex-direction:column;gap:14px;width:min(100vw,1080px);margin-top:clamp(42px,7vh,86px);}
   .hero-proof-row{overflow:hidden;width:100%;}
-  .hero-proof-pill{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;background:rgba(255,255,255,.82);border:1.5px solid rgba(140,110,58,.18);border-radius:999px;box-shadow:0 14px 34px -24px rgba(184,147,85,.5);font-family:'Hanken Grotesk',sans-serif;font-size:clamp(11px,1.15vw,12.5px);letter-spacing:.12em;text-transform:uppercase;color:#4C5145;font-weight:700;white-space:nowrap;}
+  .hero-proof-pill{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;background:linear-gradient(145deg,rgba(60,74,53,.96),rgba(43,57,38,.94));border:1.5px solid rgba(231,210,155,.34);border-radius:999px;box-shadow:0 18px 42px -24px rgba(43,57,38,.7),inset 0 1px 0 rgba(255,255,255,.08);font-family:'Hanken Grotesk',sans-serif;font-size:clamp(11px,1.15vw,12.5px);letter-spacing:.12em;text-transform:uppercase;color:#F4EFE2;font-weight:700;white-space:nowrap;}
   .hero-proof-pill--wide{padding-inline:30px;}
+  #projects [data-track] > div{cursor:pointer;transition:transform .35s cubic-bezier(.16,.84,.44,1),filter .35s ease;transform-origin:center top;}
+  #projects [data-track] > div:hover,#projects [data-track] > div[data-project-expanded="true"]{transform:scale(1.055);z-index:4;}
+  #projects [data-scroll-gutter]{touch-action:pan-y;}
   @media (max-width:900px){
     .hero-cta-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
   }
   @media (max-width:560px){
     .hero-cta-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
     .hero-cta-btn{min-height:66px;padding:12px 14px;font-size:11px;letter-spacing:.1em;flex-direction:column;gap:6px;}
-    .hero-cta-btn .cta-icon{width:18px;height:18px;font-size:14px;}
+    .hero-cta-btn .cta-icon{width:24px;height:24px;font-size:14px;}
+    .hero-proof-marquees{margin-top:44px;}
     .hero-proof-pill{min-height:50px;padding:0 20px;font-size:11px;letter-spacing:.1em;}
+    #projects [data-track] > div:hover,#projects [data-track] > div[data-project-expanded="true"]{transform:scale(1.035);}
   }
   #nick-headshot,#nick-profile{display:block !important;width:100% !important;height:100% !important;}
   @media (prefers-reduced-motion:reduce){
@@ -110,10 +117,10 @@
         </div>
         <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.16,.84,.44,1) .24s,transform 1s cubic-bezier(.16,.84,.44,1) .24s;width:100%;">
           <div class="hero-cta-grid">
-            <a href="assets/Nick-Jones-CV.pdf" download="Nick-Jones-CV.pdf" aria-label="Download PDF CV" class="hero-cta-btn" style="background:linear-gradient(135deg,#C9A96A,#E7D29B);border:1px solid rgba(140,110,58,.25);color:#2B3026;box-shadow:0 18px 38px -20px rgba(184,147,85,.8);" style-hover="transform:translateY(-2px);box-shadow:0 22px 46px -18px rgba(184,147,85,.9);"><span class="cta-icon" aria-hidden="true">↓</span><span class="cta-label">Download CV</span></a>
-            <a href="#projects" aria-label="Jump to key projects" class="hero-cta-btn" style="background:rgba(60,74,53,.08);border:1px solid rgba(60,74,53,.24);color:#3C4A35;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;"><span class="cta-icon" aria-hidden="true">◇</span><span class="cta-label">Key Projects</span></a>
-            <a href="#contact" aria-label="Jump to contact details" class="hero-cta-btn" style="background:rgba(255,255,255,.72);border:1px solid rgba(140,110,58,.32);color:#3C4A35;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;"><span class="cta-icon" aria-hidden="true">✉</span><span class="cta-label">Contact Nick</span></a>
-            <a href="https://www.linkedin.com/in/nick-jones-5809b671/" target="_blank" rel="noreferrer" aria-label="Open Nick Jones LinkedIn profile" class="hero-cta-btn" style="background:rgba(255,255,255,.72);border:1px solid rgba(140,110,58,.32);color:#3C4A35;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;"><span class="cta-icon" aria-hidden="true">↗</span><span class="cta-label">LinkedIn</span></a>
+            <a href="assets/Nick-Jones-CV.pdf" download="Nick-Jones-CV.pdf" aria-label="Download PDF CV" class="hero-cta-btn" style="background:linear-gradient(135deg,#C9A96A,#E7D29B);border:1px solid rgba(140,110,58,.25);color:#2B3026;box-shadow:0 18px 38px -20px rgba(184,147,85,.8);" style-hover="transform:translateY(-2px);box-shadow:0 22px 46px -18px rgba(184,147,85,.9);"><span class="cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg></span><span class="cta-label">Download CV</span></a>
+            <a href="#projects" aria-label="Jump to key projects" class="hero-cta-btn" style="background:rgba(60,74,53,.08);border:1px solid rgba(60,74,53,.24);color:#3C4A35;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;"><span class="cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H10l2 2h5.5A2.5 2.5 0 0 1 20 9.5v7A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z"></path><path d="M8 13h8"></path></svg></span><span class="cta-label">Key Projects</span></a>
+            <a href="#contact" aria-label="Jump to contact details" class="hero-cta-btn" style="background:rgba(255,255,255,.72);border:1px solid rgba(140,110,58,.32);color:#3C4A35;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;"><span class="cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5h16v11H4z"></path><path d="m4 7 8 6 8-6"></path></svg></span><span class="cta-label">Contact Nick</span></a>
+            <a href="https://www.linkedin.com/in/nick-jones-5809b671/" target="_blank" rel="noreferrer" aria-label="Open Nick Jones LinkedIn profile" class="hero-cta-btn" style="background:rgba(255,255,255,.72);border:1px solid rgba(140,110,58,.32);color:#3C4A35;" style-hover="background:#3C4A35;color:#F2ECDF;border-color:#3C4A35;"><span class="cta-icon cta-icon--linkedin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 8.9H3.4v11h3.2zM5 7.4a1.86 1.86 0 1 0 0-3.72 1.86 1.86 0 0 0 0 3.72zM20.6 13.8c0-3.28-1.75-4.8-4.08-4.8a3.52 3.52 0 0 0-3.18 1.74V8.9h-3.08v11h3.2v-5.44c0-1.44.27-2.83 2.05-2.83 1.75 0 1.77 1.64 1.77 2.92v5.35h3.2z"></path></svg></span><span class="cta-label">LinkedIn</span></a>
           </div>
         </div>
         <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.16,.84,.44,1) .32s,transform 1s cubic-bezier(.16,.84,.44,1) .32s;width:100%;display:flex;justify-content:center;">
@@ -677,65 +684,14 @@
     <div data-reveal="" style="opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto clamp(12px,2vh,20px);padding:0 clamp(24px,7vw,120px);">
       <div style="display:flex;align-items:center;gap:10px;">
         <span style="display:inline-block;width:6px;height:6px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>
-        <span style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#8C6E3A;font-weight:700;">Thomas Sabo</span>
+        <span style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#8C6E3A;font-weight:700;">Commercial Tools</span>
       </div>
     </div>
-    <div data-carousel="" style="position:relative;cursor:grab;margin-bottom:clamp(34px,5vh,60px);">
-      <div style="position:absolute;left:0;top:0;bottom:0;width:clamp(40px,9vw,140px);z-index:3;pointer-events:none;background:linear-gradient(90deg,#EFE7D8,rgba(239,231,216,0));"></div>
-      <div style="position:absolute;right:0;top:0;bottom:0;width:clamp(40px,9vw,140px);z-index:3;pointer-events:none;background:linear-gradient(270deg,#EFE7D8,rgba(239,231,216,0));"></div>
-      <div data-track="" style="display:flex;gap:clamp(16px,2vw,26px);width:max-content;padding:6px clamp(24px,7vw,120px);will-change:transform;">
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
-          <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
-            <div style="position:absolute;inset:0;">
-              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-tradeshow-1.webp" alt="Thomas Sabo trade show concept" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-              </div>
-              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:ripple-swap 8s ease-in-out infinite;clip-path:circle(0% at 50% 50%);will-change:clip-path;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-tradeshow-2.webp" alt="Charm Club trade show concept" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top:16px;">
-            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo &amp; Charm Club</div>
-            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Trade show concept &amp; implementation</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Concept sketch through to digital render and live build.</p>
-          </div>
-        </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
-          <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
-            <div style="position:absolute;inset:0;">
-              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-campaign-1.webp" alt="Find Your Charm campaign activation" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-              </div>
-              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:ripple-swap 8s ease-in-out infinite;animation-delay:-2s;clip-path:circle(0% at 50% 50%);will-change:clip-path;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-campaign-2.webp" alt="Find Your Charm lift wrap" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top:16px;">
-            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo &middot; Find Your Charm</div>
-            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Marketing campaigns</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Large-format retail activations and OOH placements.</p>
-          </div>
-        </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
-          <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
-            <div style="position:absolute;inset:0;">
-              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-brand-takeovers.webp" alt="Thomas Sabo brand takeover" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-              </div>
-              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:ripple-swap 8s ease-in-out infinite;animation-delay:-1s;clip-path:circle(0% at 50% 50%);will-change:clip-path;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-takeover-2.webp" alt="Thomas Sabo window display takeover" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top:16px;">
-            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo</div>
-            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Specialised brand takeovers</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">In-store and window takeovers — cabinetry, fixtures and props.</p>
-          </div>
-        </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
+    <div data-carousel="" data-row="commercial-tools" style="position:relative;cursor:grab;margin-bottom:clamp(34px,5vh,60px);">
+      <div data-scroll-gutter="" aria-hidden="true" style="position:absolute;left:0;top:0;bottom:0;width:clamp(48px,12vw,168px);z-index:3;pointer-events:auto;touch-action:pan-y;cursor:default;background:linear-gradient(90deg,#EFE7D8,rgba(239,231,216,0));"></div>
+      <div data-scroll-gutter="" aria-hidden="true" style="position:absolute;right:0;top:0;bottom:0;width:clamp(48px,12vw,168px);z-index:3;pointer-events:auto;touch-action:pan-y;cursor:default;background:linear-gradient(270deg,#EFE7D8,rgba(239,231,216,0));"></div>
+      <div data-track="" style="display:flex;gap:clamp(14px,1.8vw,22px);width:max-content;padding:6px clamp(64px,13vw,180px);will-change:transform;">
+<div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
             <div style="position:absolute;inset:0;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
@@ -752,7 +708,94 @@
             <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Bespoke price guides and product line sheets per account.</p>
           </div>
         </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
+<div style="flex:none;width:clamp(168px,18vw,218px);">
+          <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+            <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="ts-training" role="img" aria-label="Retail and wholesale training workshop photo" src="assets/optimized/proj-training-1.jpg" shape="rounded" radius="14" fit="cover" placeholder="Drop a photo" style="display:block;width:100%;height:100%;" hint-size="100%,100%"></x-import>
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Retail / wholesale training</h3>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Product, brand and selling training for retail teams and wholesale partners.</p>
+          </div>
+        </div>
+<div style="flex:none;width:clamp(168px,18vw,218px);">
+          <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+            <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="proj-1" role="img" aria-label="Visual merchandising guide for a retail partner" shape="rounded" radius="14" fit="cover" placeholder="Drop a photo" style="display:block;width:100%;height:100%;" hint-size="100%,100%"></x-import>
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">2025</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Bespoke VM guides per account</h3>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Brand and visual standards translated into partner-ready guides that supported more consistent in-store execution.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-reveal="" style="opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto clamp(12px,2vh,20px);padding:0 clamp(24px,7vw,120px);">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span style="display:inline-block;width:6px;height:6px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);"></span>
+        <span style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#8C6E3A;font-weight:700;">Selected Projects</span>
+      </div>
+    </div>
+    <div data-carousel="" data-row="selected-projects" style="position:relative;cursor:grab;margin-bottom:clamp(34px,5vh,60px);">
+      <div data-scroll-gutter="" aria-hidden="true" style="position:absolute;left:0;top:0;bottom:0;width:clamp(48px,12vw,168px);z-index:3;pointer-events:auto;touch-action:pan-y;cursor:default;background:linear-gradient(90deg,#EFE7D8,rgba(239,231,216,0));"></div>
+      <div data-scroll-gutter="" aria-hidden="true" style="position:absolute;right:0;top:0;bottom:0;width:clamp(48px,12vw,168px);z-index:3;pointer-events:auto;touch-action:pan-y;cursor:default;background:linear-gradient(270deg,#EFE7D8,rgba(239,231,216,0));"></div>
+      <div data-track="" style="display:flex;gap:clamp(14px,1.8vw,22px);width:max-content;padding:6px clamp(64px,13vw,180px);will-change:transform;">
+<div style="flex:none;width:clamp(168px,18vw,218px);">
+          <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
+            <div style="position:absolute;inset:0;">
+              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-tradeshow-1.webp" alt="Thomas Sabo trade show concept" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+              </div>
+              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:ripple-swap 8s ease-in-out infinite;clip-path:circle(0% at 50% 50%);will-change:clip-path;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-tradeshow-2.webp" alt="Charm Club trade show concept" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo &amp; Charm Club</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Trade show concept &amp; implementation</h3>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Concept sketch through to digital render and live build.</p>
+          </div>
+        </div>
+<div style="flex:none;width:clamp(168px,18vw,218px);">
+          <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
+            <div style="position:absolute;inset:0;">
+              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-campaign-1.webp" alt="Find Your Charm campaign activation" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+              </div>
+              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:ripple-swap 8s ease-in-out infinite;animation-delay:-2s;clip-path:circle(0% at 50% 50%);will-change:clip-path;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-campaign-2.webp" alt="Find Your Charm lift wrap" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo &middot; Find Your Charm</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Marketing campaigns</h3>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Large-format retail activations and OOH placements.</p>
+          </div>
+        </div>
+<div style="flex:none;width:clamp(168px,18vw,218px);">
+          <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
+            <div style="position:absolute;inset:0;">
+              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-brand-takeovers.webp" alt="Thomas Sabo brand takeover" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+              </div>
+              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:ripple-swap 8s ease-in-out infinite;animation-delay:-1s;clip-path:circle(0% at 50% 50%);will-change:clip-path;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+                <div style="width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;"><img src="assets/optimized/proj-takeover-2.webp" alt="Thomas Sabo window display takeover" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Specialised brand takeovers</h3>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">In-store and window takeovers — cabinetry, fixtures and props.</p>
+          </div>
+        </div>
+<div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
             <div style="position:absolute;inset:0;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
@@ -769,7 +812,7 @@
             <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">End-to-end pop-up concept, fit-out and merchandising.</p>
           </div>
         </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
+<div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;">
             <div style="position:absolute;inset:0;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
               <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
@@ -785,7 +828,7 @@
             <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Storefront evolution across premium retail environments, balancing brand presence, signage and in-store theatre.</p>
           </div>
         </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
+<div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
             <div style="position:absolute;inset:0;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
@@ -808,7 +851,7 @@
             <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Winning and shaping a flagship wholesale environment that combined standout brand theatre with strong partner-led commercial execution.</p>
           </div>
         </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
+<div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
             <div style="position:absolute;inset:0;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
@@ -831,7 +874,7 @@
             <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Creating a dedicated wholesale environment designed to host partners, present collections beautifully and support stronger commercial conversations.</p>
           </div>
         </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
+<div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
             <div style="position:absolute;inset:0;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
@@ -848,7 +891,7 @@
             <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Considered styling, props and finish at point of sale.</p>
           </div>
         </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
+<div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
             <div style="position:absolute;inset:0;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
@@ -865,30 +908,6 @@
             <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">In-store events and hospitality — branded experiences that build client relationships.</p>
           </div>
         </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
-          <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-            <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
-              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="ts-training" role="img" aria-label="Retail and wholesale training workshop photo" src="assets/optimized/proj-training-1.jpg" shape="rounded" radius="14" fit="cover" placeholder="Drop a photo" style="display:block;width:100%;height:100%;" hint-size="100%,100%"></x-import>
-            </div>
-          </div>
-          <div style="margin-top:16px;">
-            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo</div>
-            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Retail / wholesale training</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Product, brand and selling training for retail teams and wholesale partners.</p>
-          </div>
-        </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
-          <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-            <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
-              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="proj-1" role="img" aria-label="Visual merchandising guide for a retail partner" shape="rounded" radius="14" fit="cover" placeholder="Drop a photo" style="display:block;width:100%;height:100%;" hint-size="100%,100%"></x-import>
-            </div>
-          </div>
-          <div style="margin-top:16px;">
-            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">2025</div>
-            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Bespoke VM guides per account</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Brand and visual standards translated into partner-ready guides that supported more consistent in-store execution.</p>
-          </div>
-        </div>
       </div>
     </div>
     <div data-reveal="" style="opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto clamp(12px,2vh,20px);padding:0 clamp(24px,7vw,120px);">
@@ -898,10 +917,10 @@
       </div>
     </div>
     <div data-carousel="" style="position:relative;cursor:grab;margin-bottom:clamp(34px,5vh,60px);">
-      <div style="position:absolute;left:0;top:0;bottom:0;width:clamp(40px,9vw,140px);z-index:3;pointer-events:none;background:linear-gradient(90deg,#EFE7D8,rgba(239,231,216,0));"></div>
-      <div style="position:absolute;right:0;top:0;bottom:0;width:clamp(40px,9vw,140px);z-index:3;pointer-events:none;background:linear-gradient(270deg,#EFE7D8,rgba(239,231,216,0));"></div>
-      <div data-track="" style="display:flex;gap:clamp(16px,2vw,26px);width:max-content;padding:6px clamp(24px,7vw,120px);will-change:transform;">
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
+      <div data-scroll-gutter="" aria-hidden="true" style="position:absolute;left:0;top:0;bottom:0;width:clamp(48px,12vw,168px);z-index:3;pointer-events:auto;touch-action:pan-y;cursor:default;background:linear-gradient(90deg,#EFE7D8,rgba(239,231,216,0));"></div>
+      <div data-scroll-gutter="" aria-hidden="true" style="position:absolute;right:0;top:0;bottom:0;width:clamp(48px,12vw,168px);z-index:3;pointer-events:auto;touch-action:pan-y;cursor:default;background:linear-gradient(270deg,#EFE7D8,rgba(239,231,216,0));"></div>
+      <div data-track="" style="display:flex;gap:clamp(14px,1.8vw,22px);width:max-content;padding:6px clamp(64px,13vw,180px);will-change:transform;">
+        <div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
             <div style="position:absolute;inset:0;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
@@ -918,7 +937,7 @@
             <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Concept and specification through to campaign.</p>
           </div>
         </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
+        <div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
             <div style="position:absolute;inset:0;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
@@ -935,7 +954,7 @@
             <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Charm display unit — technical spec to finished retail piece.</p>
           </div>
         </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
+        <div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
             <div style="position:absolute;inset:0;transform-style:preserve-3d;animation:ts-flip 8s ease-in-out infinite;animation-delay:-2.5s;will-change:transform;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
@@ -952,7 +971,7 @@
             <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Identity reworked from first concept to final brand system.</p>
           </div>
         </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
+        <div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
             <div style="position:absolute;inset:0;transform-style:preserve-3d;animation:ts-flip 8s ease-in-out infinite;animation-delay:-6.5s;will-change:transform;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
@@ -969,7 +988,7 @@
             <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">From a literal mark to a brand with meaning and warmth.</p>
           </div>
         </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
+        <div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
             <div style="position:absolute;inset:0;transform-style:preserve-3d;animation:ts-flip 8s ease-in-out infinite;animation-delay:-4.5s;will-change:transform;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
@@ -986,7 +1005,7 @@
             <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Reworking flat packshots into premium, on-brand product imagery for e-commerce.</p>
           </div>
         </div>
-        <div style="flex:none;width:clamp(186px,21vw,245px);">
+        <div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
             <div style="position:absolute;inset:0;transform-style:preserve-3d;animation:ts-flip 8s ease-in-out infinite;animation-delay:-5.5s;will-change:transform;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
@@ -2041,8 +2060,8 @@ class Component extends DCLogic {
     wraps.forEach((wrap, wi) => {
       const track = wrap.querySelector('[data-track]');
       if (!track) return;
-      // first row (Thomas Sabo) drifts left; second row (Contractor / Lily Charmed) drifts right
-      const dir = wi === 0 ? -1 : 1;
+      // Alternate row direction so the project rows feel alive without rushing.
+      const dir = wi % 2 === 0 ? -1 : 1;
 
       // duplicate the cards once for a seamless infinite loop
       if (track.dataset.looped !== '1') {
@@ -2062,14 +2081,49 @@ class Component extends DCLogic {
       });
 
       const loopW = () => { const k = track.children, n = (k.length / 2) | 0; return (k[n] ? k[n].offsetLeft - k[0].offsetLeft : track.scrollWidth / 2); };
-      const rig = { wrap, track, dir, speed: 0.32, w: loopW(), pos: dir < 0 ? 0 : -loopW(), dragging: false, paused: false, startX: 0, startPos: 0, moved: 0 };
+      const rig = { wrap, track, dir, speed: 0.32, w: loopW(), pos: dir < 0 ? 0 : -loopW(), dragging: false, paused: false, startX: 0, startY: 0, startPos: 0, moved: 0, touchCapture: false };
       const norm = () => { const w = rig.w; if (w > 0) { while (rig.pos <= -w) rig.pos += w; while (rig.pos > 0) rig.pos -= w; } };
       const apply = () => { track.style.transform = 'translate3d(' + rig.pos.toFixed(2) + 'px,0,0)'; };
       rig.norm = norm; rig.apply = apply;
 
-      const onDown = (e) => { rig.dragging = true; rig.paused = true; rig.moved = 0; rig.startX = (e.touches ? e.touches[0].clientX : e.clientX); rig.startPos = rig.pos; wrap.style.cursor = 'grabbing'; };
-      const onMove = (e) => { if (!rig.dragging) return; const x = (e.touches ? e.touches[0].clientX : e.clientX); const d = x - rig.startX; rig.moved += Math.abs(d); rig.pos = rig.startPos + d; norm(); apply(); if (e.cancelable) e.preventDefault(); };
-      const onUp = () => { if (!rig.dragging) return; rig.dragging = false; wrap.style.cursor = 'grab'; setTimeout(() => { rig.paused = false; }, 1000); };
+      const inScrollMargin = (x) => {
+        const r = wrap.getBoundingClientRect();
+        const margin = Math.min(104, Math.max(52, r.width * 0.12));
+        return x < r.left + margin || x > r.right - margin;
+      };
+      const onDown = (e) => {
+        const point = e.touches ? e.touches[0] : e;
+        if (!point || e.target.closest('[data-scroll-gutter]') || inScrollMargin(point.clientX)) return;
+        rig.dragging = true;
+        rig.paused = true;
+        rig.moved = 0;
+        rig.touchCapture = !e.touches;
+        rig.startX = point.clientX;
+        rig.startY = point.clientY || 0;
+        rig.startPos = rig.pos;
+        wrap.style.cursor = 'grabbing';
+      };
+      const onMove = (e) => {
+        if (!rig.dragging) return;
+        const point = e.touches ? e.touches[0] : e;
+        const d = point.clientX - rig.startX;
+        const dy = (point.clientY || rig.startY) - rig.startY;
+        if (e.touches && !rig.touchCapture && Math.max(Math.abs(d), Math.abs(dy)) > 8) {
+          if (Math.abs(dy) > Math.abs(d) * 1.1) {
+            rig.dragging = false;
+            rig.paused = false;
+            wrap.style.cursor = 'grab';
+            return;
+          }
+          rig.touchCapture = true;
+        }
+        rig.moved += Math.abs(d);
+        rig.pos = rig.startPos + d;
+        norm();
+        apply();
+        if ((!e.touches || rig.touchCapture) && e.cancelable) e.preventDefault();
+      };
+      const onUp = () => { if (!rig.dragging) return; rig.dragging = false; rig.touchCapture = false; wrap.style.cursor = 'grab'; setTimeout(() => { rig.paused = false; }, 1000); };
 
       wrap.addEventListener('mousedown', onDown);
       window.addEventListener('mousemove', onMove);
@@ -2081,7 +2135,13 @@ class Component extends DCLogic {
       wrap.addEventListener('mouseleave', () => { if (!rig.dragging) rig.paused = false; });
       wrap.addEventListener('contextmenu', (e) => e.preventDefault());
       wrap.addEventListener('dragstart', (e) => e.preventDefault());
-      track.addEventListener('click', (e) => { if (rig.moved > 6) { e.stopPropagation(); e.preventDefault(); } }, true);
+      track.addEventListener('click', (e) => {
+        if (rig.moved > 6) { e.stopPropagation(); e.preventDefault(); return; }
+        const card = e.target.closest('[data-track] > div');
+        if (!card) return;
+        Array.from(track.children).forEach(node => { if (node !== card) node.removeAttribute('data-project-expanded'); });
+        card.toggleAttribute('data-project-expanded');
+      }, true);
       window.addEventListener('resize', () => { rig.w = loopW(); norm(); apply(); });
 
       norm(); apply();
