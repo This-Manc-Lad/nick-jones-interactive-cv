@@ -46,6 +46,8 @@
   @keyframes ripple-swap{0%,38%{clip-path:circle(0% at 50% 50%);}50%,88%{clip-path:circle(150% at 50% 50%);}100%{clip-path:circle(0% at 50% 50%);}}
   @keyframes project-blur-fade{0%,38%{opacity:0;filter:blur(14px);transform:scale(1.025);}50%,86%{opacity:1;filter:blur(0);transform:scale(1);}100%{opacity:0;filter:blur(14px);transform:scale(1.025);}}
   @keyframes project-blur-cycle{0%,100%{opacity:0;filter:blur(14px);transform:scale(1.025);}12%,29%{opacity:1;filter:blur(0);transform:scale(1);}41%,95%{opacity:0;filter:blur(14px);transform:scale(1.025);}}
+  @keyframes retail-store-black{0%,23%,56%,100%{opacity:0;filter:blur(14px);transform:scale(1.025);}31%,45%{opacity:1;filter:blur(0);transform:scale(1);}}
+  @keyframes retail-store-gold{0%,54%,92%,100%{opacity:0;filter:blur(14px);transform:scale(1.025);}64%,80%{opacity:1;filter:blur(0);transform:scale(1);}}
   @keyframes name-in{0%{opacity:0;transform:translateY(64px) rotate(2deg);}100%{opacity:1;transform:translateY(0) rotate(0);}}
   @keyframes write-on{from{clip-path:inset(-12% 100% -22% -4%);}to{clip-path:inset(-12% -8% -22% -4%);}}
   @keyframes digital-in{0%{opacity:0;transform:translateY(-7px);filter:blur(3px);}38%{opacity:1;color:#B89355;transform:translateY(2px);}70%{color:#B89355;}100%{opacity:1;transform:none;filter:blur(0);}}
@@ -62,13 +64,36 @@
   .hero-proof-row{overflow:hidden;width:100%;}
   .hero-proof-pill{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;background:linear-gradient(145deg,rgba(60,74,53,.96),rgba(43,57,38,.94));border:1.5px solid rgba(231,210,155,.34);border-radius:999px;box-shadow:0 18px 42px -24px rgba(43,57,38,.7),inset 0 1px 0 rgba(255,255,255,.08);font-family:'Hanken Grotesk',sans-serif;font-size:clamp(11px,1.15vw,12.5px);letter-spacing:.12em;text-transform:uppercase;color:#F4EFE2;font-weight:700;white-space:nowrap;}
   .hero-proof-pill--wide{padding-inline:30px;}
+  .interest-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:10px;}
+  .interest-pill{display:inline-flex;align-items:center;justify-content:center;min-height:40px;border-radius:999px;border:1px solid rgba(140,110,58,.28);background:rgba(255,255,255,.42);color:#3C4A35;padding:11px 18px;font-family:'Hanken Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 14px 30px -24px rgba(43,48,38,.55);cursor:pointer;transition:transform .3s cubic-bezier(.16,.84,.44,1),box-shadow .3s,border-color .3s,background .3s,color .3s;}
+  .interest-pill:hover{transform:translateY(-3px);background:linear-gradient(160deg,#FFFDF8,#F1E7CF);border-color:rgba(184,147,85,.58);box-shadow:0 18px 36px -22px rgba(43,48,38,.58);}
+  .interest-pill:focus-visible,.interest-close:focus-visible{outline:2px solid #C9A96A;outline-offset:4px;}
+  .interest-modal[hidden]{display:none !important;}
+  .interest-modal{position:fixed;inset:0;z-index:95;display:flex;align-items:center;justify-content:center;padding:clamp(18px,4vw,46px);pointer-events:none;}
+  .interest-modal[data-open="true"]{pointer-events:auto;}
+  .interest-modal__shade{position:absolute;inset:0;background:rgba(31,39,27,.58);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0;transition:opacity .28s ease;}
+  .interest-modal__card{position:relative;width:min(780px,100%);max-height:min(82vh,760px);overflow:auto;border-radius:20px;border:1px solid rgba(140,110,58,.24);background:linear-gradient(160deg,#FFFDF8,#F2ECDF 64%,#E9DFC9);box-shadow:0 32px 90px -36px rgba(20,26,16,.72);padding:clamp(26px,4vw,42px);opacity:0;transform:translateY(18px) scale(.985);transition:opacity .32s cubic-bezier(.16,.84,.44,1),transform .32s cubic-bezier(.16,.84,.44,1);}
+  .interest-modal[data-open="true"] .interest-modal__shade{opacity:1;}
+  .interest-modal[data-open="true"] .interest-modal__card{opacity:1;transform:translateY(0) scale(1);}
+  .interest-kicker{display:flex;align-items:center;gap:11px;margin-bottom:12px;font-family:'Hanken Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#8C6E3A;}
+  .interest-kicker::before{content:"";width:7px;height:7px;background:linear-gradient(135deg,#E7D29B,#B89355);transform:rotate(45deg);flex:none;}
+  .interest-modal h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,4vw,48px);line-height:1.02;color:#2B3026;margin:0 0 18px;}
+  .interest-copy{display:grid;gap:14px;font-family:'Hanken Grotesk',sans-serif;font-size:clamp(14.5px,1.45vw,16px);line-height:1.68;color:#4C5145;text-align:left;}
+  .interest-copy p{margin:0;text-wrap:pretty;}
+  .interest-image-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:clamp(20px,3vw,28px);}
+  .interest-image-placeholder{min-height:clamp(128px,18vw,168px);border-radius:14px;border:1px dashed rgba(140,110,58,.32);background:linear-gradient(145deg,rgba(255,255,255,.5),rgba(231,210,155,.14));box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 16px 34px -28px rgba(43,48,38,.55);display:flex;align-items:center;justify-content:center;text-align:center;color:rgba(60,74,53,.56);font-family:'Hanken Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:16px;}
+  .interest-caption{margin-top:10px;font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;line-height:1.5;color:rgba(76,81,69,.72);text-align:left;}
+  .interest-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid rgba(140,110,58,.34);background:rgba(255,255,255,.62);color:#3C4A35;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .25s,background .25s,border-color .25s;}
+  .interest-close:hover{transform:scale(1.06);background:#3C4A35;border-color:#3C4A35;color:#F4EFE2;}
   #projects [data-carousel]{margin-bottom:clamp(40px,5vh,56px) !important;}
   #projects > div[data-reveal]{margin-bottom:clamp(12px,1.7vh,18px) !important;}
+  #projects > div[data-reveal] span[style*="text-transform:uppercase"]{font-size:10.5px !important;letter-spacing:.22em !important;}
   #projects [data-track]{align-items:flex-start !important;gap:clamp(12px,1.5vw,19px) !important;}
   #projects [data-track] > div{width:clamp(143px,15.3vw,185px) !important;cursor:pointer;transition:transform .35s cubic-bezier(.16,.84,.44,1),filter .35s ease;transform-origin:center top;}
   #projects [data-track] > div:hover,#projects [data-track] > div[data-project-expanded="true"]{transform:scale(1.055);z-index:4;}
-  #projects [data-track] > div > div:last-child{margin-top:12px !important;}
-  #projects [data-track] h3{font-size:clamp(17px,1.75vw,22px) !important;line-height:1.1 !important;text-wrap:balance;}
+  #projects [data-track] > div > div:last-child{margin-top:12px !important;text-align:center !important;}
+  #projects [data-track] > div > div:last-child > div:first-child{font-size:10.5px !important;line-height:1.25 !important;letter-spacing:.16em !important;}
+  #projects [data-track] h3{font-size:clamp(12.5px,1.05vw,15px) !important;line-height:1.14 !important;text-wrap:balance;}
   #projects [data-track] p{font-size:12.5px !important;line-height:1.48 !important;text-wrap:pretty;}
   #projects [data-scroll-gutter]{touch-action:pan-y;}
   @media (max-width:900px){
@@ -80,6 +105,11 @@
     .hero-cta-btn .cta-icon{width:24px;height:24px;font-size:14px;}
     .hero-proof-marquees{margin-top:44px;}
     .hero-proof-pill{min-height:50px;padding:0 20px;font-size:11px;letter-spacing:.1em;}
+    .interest-pills{gap:8px;}
+    .interest-pill{width:100%;min-height:42px;font-size:11px;}
+    .interest-modal{align-items:flex-end;padding:14px;}
+    .interest-modal__card{max-height:88vh;border-radius:18px;padding:28px 20px 22px;}
+    .interest-image-grid{grid-template-columns:1fr;}
     #projects [data-track] > div:hover,#projects [data-track] > div[data-project-expanded="true"]{transform:scale(1.035);}
   }
   #nick-headshot,#nick-profile{display:block !important;width:100% !important;height:100% !important;}
@@ -456,7 +486,7 @@
             <img src="assets/optimized/sig-turner.webp" alt="Patrick Turner signature" style="align-self:flex-end;height:clamp(40px,5.8vw,58px);width:auto;margin:clamp(16px,2.2vw,22px) 0 0;filter:drop-shadow(0 3px 7px rgba(20,26,16,.35));position:relative;z-index:2;">
             <div style="position:relative;z-index:2;margin-top:clamp(8px,1.4vw,14px);">
               <div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:700;color:#E7D29B;">Patrick Turner</div>
-              <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;color:rgba(244,239,226,.6);max-width:32ch;line-height:1.4;">Managing Director, The Company of Master Jewellers — former industry partner</div>
+              <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;color:rgba(244,239,226,.6);max-width:32ch;line-height:1.4;">Managing Director, The Company of Master Jewellers — former team member</div>
             </div>
           </div>
           <button data-quote-toggle="" type="button" aria-label="Reveal full reference" style="position:absolute;left:50%;bottom:0;transform:translate(-50%,50%);display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(231,210,155,.45);background:linear-gradient(160deg,#445036,#2F3B28);color:#E7D29B;cursor:pointer;z-index:6;box-shadow:0 10px 24px -8px rgba(28,34,22,.7);transition:transform .25s,border-color .25s,background .25s;" style-hover="border-color:#E7D29B;background:linear-gradient(160deg,#4C5A3C,#36422C);"><span aria-hidden="true" style="display:block;width:8px;height:8px;border-right:1.7px solid currentColor;border-bottom:1.7px solid currentColor;transform:translateY(-2px) rotate(45deg);"></span></button>
@@ -738,18 +768,6 @@
 <div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
             <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
-              <img src="assets/optimized/proj-brand-training-2025.jpg" alt="Thomas Sabo Brand Training 2025 client training booklet cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-          </div>
-          <div style="margin-top:16px;">
-            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Thomas Sabo</div>
-            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;">Brand Training</h3>
-            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Client-ready brand training resource for partner teams.</p>
-          </div>
-        </div>
-<div style="flex:none;width:clamp(168px,18vw,218px);">
-          <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
-            <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
               <div style="position:absolute;inset:0;">
                 <img src="assets/optimized/proj-vm-guides-stack.jpg" alt="Thomas Sabo bespoke visual merchandising guide booklets for partner accounts" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
               </div>
@@ -825,6 +843,19 @@
           </div>
         </div>
 <div style="flex:none;width:clamp(168px,18vw,218px);">
+          <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
+            <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
+              <img src="assets/optimized/proj-ooh-campaigns-1.jpg" alt="Charm Club Peanuts out-of-home campaign on Manchester tram stop digital displays" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+              <img src="assets/optimized/proj-ooh-campaigns-2.jpg" alt="Charm Club Peanuts taxi wrap out-of-home campaign in Manchester" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;filter:blur(14px);transform:scale(1.025);animation:project-blur-fade 9s ease-in-out infinite;">
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:6px;">Charm Club &middot; Peanuts</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.12;margin:0 0 6px;color:#2B3026;text-transform:uppercase;">OOH CAMPAIGNS</h3>
+            <p style="font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;line-height:1.55;color:#6E6B5C;margin:0;text-wrap:pretty;">Out-of-home campaign concepts across transit media and city visibility.</p>
+          </div>
+        </div>
+<div style="flex:none;width:clamp(168px,18vw,218px);">
           <div style="position:relative;width:100%;aspect-ratio:4/5;perspective:1500px;">
             <div style="position:absolute;inset:0;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
@@ -863,8 +894,8 @@
             <div style="position:absolute;inset:0;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
               <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
                 <img src="assets/optimized/proj-retail-store-1.jpg" alt="Thomas Sabo retail store development storefront with white illuminated fascia" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
-                <img src="assets/optimized/proj-retail-store-2.jpg" alt="Thomas Sabo retail store development storefront with black entrance framing" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;filter:blur(14px);transform:scale(1.025);animation:project-blur-cycle 12s ease-in-out infinite;">
-                <img src="assets/optimized/proj-retail-store-3.jpg" alt="Thomas Sabo retail store development storefront with warm gold facade" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;filter:blur(14px);transform:scale(1.025);animation:project-blur-cycle 12s ease-in-out infinite;animation-delay:-4s;">
+                <img src="assets/optimized/proj-retail-store-2.jpg" alt="Thomas Sabo retail store development storefront with black entrance framing" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;filter:blur(14px);transform:scale(1.025);animation:retail-store-black 12s ease-in-out infinite;">
+                <img src="assets/optimized/proj-retail-store-3.jpg" alt="Thomas Sabo retail store development storefront with warm gold facade" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;filter:blur(14px);transform:scale(1.025);animation:retail-store-gold 12s ease-in-out infinite;">
               </div>
             </div>
           </div>
@@ -879,7 +910,6 @@
             <div style="position:absolute;inset:0;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
                 <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
-                  <span style="position:absolute;top:10px;left:10px;z-index:2;display:inline-flex;align-items:center;justify-content:center;min-width:58px;height:24px;padding:0 10px;border-radius:999px;background:rgba(47,59,40,.88);border:1px solid rgba(231,210,155,.28);font-family:'Hanken Grotesk',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#F4EFE2;font-weight:700;">Before</span>
                   <img src="assets/optimized/proj-wholesale-shopfit-1.jpg" alt="Large wholesale jewellery shopfit interior with Thomas Sabo and Mococo branding" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
                 </div>
               </div>
@@ -902,7 +932,6 @@
             <div style="position:absolute;inset:0;">
               <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:4px;background:linear-gradient(150deg,#9C7B43,#F0E0B0 38%,#C9A96A 62%,#8C6E3A);box-shadow:0 30px 64px -34px rgba(43,48,38,.6);">
                 <div style="position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#E7DEC9;">
-                  <span style="position:absolute;top:10px;left:10px;z-index:2;display:inline-flex;align-items:center;justify-content:center;min-width:58px;height:24px;padding:0 10px;border-radius:999px;background:rgba(47,59,40,.88);border:1px solid rgba(231,210,155,.28);font-family:'Hanken Grotesk',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#F4EFE2;font-weight:700;">Before</span>
                   <img src="assets/optimized/proj-wholesale-showroom-1.jpg" alt="Thomas Sabo Charm Club wholesale showroom with arched window and seating area" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
                 </div>
               </div>
@@ -1139,10 +1168,71 @@
       <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .9s ease .1s,transform .9s ease .1s;display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(20px,5vw,64px);margin-top:clamp(48px,7vh,72px);padding-top:clamp(36px,5vh,52px);border-top:1px solid rgba(140,110,58,.2);">
         <div style="text-align:center;"><div style="font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:7px;">Languages</div><div style="font-family:'Hanken Grotesk',sans-serif;font-size:15px;color:#4C5145;">Native English · Intermediate Spanish · Basic German</div></div>
         <div style="text-align:center;"><div style="font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:7px;">Driving</div><div style="font-family:'Hanken Grotesk',sans-serif;font-size:15px;color:#4C5145;">Full UK Driving Licence</div></div>
-        <div style="text-align:center;"><div style="font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:7px;">Interests</div><div style="font-family:'Hanken Grotesk',sans-serif;font-size:15px;color:#4C5145;">Travel &amp; cruise · Interiors &amp; design · AI &amp; emerging tech</div></div>
+        <div style="text-align:center;min-width:min(100%,520px);"><div style="font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:#8C6E3A;font-weight:700;margin-bottom:7px;">Interests</div><div class="interest-pills" data-interest-pills="">
+          <button class="interest-pill" type="button" data-interest-open="cruise" aria-haspopup="dialog" aria-expanded="false" aria-controls="interest-modal-cruise">Cruise &amp; Travel</button>
+          <button class="interest-pill" type="button" data-interest-open="interiors" aria-haspopup="dialog" aria-expanded="false" aria-controls="interest-modal-interiors">Interiors &amp; Design</button>
+          <button class="interest-pill" type="button" data-interest-open="ai" aria-haspopup="dialog" aria-expanded="false" aria-controls="interest-modal-ai">AI &amp; Emerging Tech</button>
+        </div></div>
       </div>
     </div>
   </section>
+
+  <div class="interest-modal" id="interest-modal-cruise" data-interest-modal="cruise" role="dialog" aria-modal="true" aria-labelledby="interest-title-cruise" hidden="">
+    <div class="interest-modal__shade" data-interest-close=""></div>
+    <article class="interest-modal__card" tabindex="-1">
+      <button class="interest-close" type="button" data-interest-close="" aria-label="Close Cruise &amp; Travel details">&times;</button>
+      <div class="interest-kicker">Personal interest</div>
+      <h3 id="interest-title-cruise">Cruise &amp; Travel</h3>
+      <div class="interest-copy">
+        <p>I am an avid cruiser, and if you have been sat with me for more than ten minutes, there is a strong chance I have already mentioned a cruise. I have been on over 15 cruises across Celebrity Cruises, Royal Caribbean, Norwegian Cruise Line, Virgin Voyages and P&amp;O, and I have converted more than a few people who had never cruised before.</p>
+        <p>For me, cruising is the perfect way to travel: you take your hotel with you, wake up somewhere new, and still have the comfort, service and atmosphere of a world-class resort around you. I love being at sea, I love the scale and design of the ships, and I am fascinated by everything from how they are built to how the guest experience is delivered on board.</p>
+        <p>It brings together many of the things I naturally enjoy: travel, hospitality, retail, interiors, operations, entertainment, service standards and brand experience. Also, being able to unpack once and still visit multiple places is frankly civilisation doing something right.</p>
+      </div>
+      <div class="interest-image-grid" aria-label="Optional cruise and travel images">
+        <div id="cruise-image-1" class="interest-image-placeholder" role="img" aria-label="cruise-image-1 placeholder">cruise-image-1</div>
+        <div id="cruise-image-2" class="interest-image-placeholder" role="img" aria-label="cruise-image-2 placeholder">cruise-image-2</div>
+      </div>
+      <div class="interest-caption">Optional image placeholders for future Cruise &amp; Travel photos.</div>
+    </article>
+  </div>
+
+  <div class="interest-modal" id="interest-modal-interiors" data-interest-modal="interiors" role="dialog" aria-modal="true" aria-labelledby="interest-title-interiors" hidden="">
+    <div class="interest-modal__shade" data-interest-close=""></div>
+    <article class="interest-modal__card" tabindex="-1">
+      <button class="interest-close" type="button" data-interest-close="" aria-label="Close Interiors &amp; Design details">&times;</button>
+      <div class="interest-kicker">Creative instinct</div>
+      <h3 id="interest-title-interiors">Interiors &amp; Design</h3>
+      <div class="interest-copy">
+        <p>Interiors and design are probably my strongest natural creative instinct. I have always been drawn to the way spaces feel, not just how they look: the colour, lighting, texture, proportion, mood and small details that make a room feel considered rather than simply decorated.</p>
+        <p>It is one of my biggest passion projects, from decorating my own home to helping friends shape theirs. I enjoy taking a space, understanding what someone wants it to say about them, and turning that into something personal, practical and visually cohesive.</p>
+        <p>It has also definitely shaped how I work professionally. I tend to think in terms of atmosphere, customer journey, storytelling, visual hierarchy and emotional response. Whether it is a home, a retail space, a brand presentation or a product display, I naturally look at how all the details come together to create a feeling. Which is a useful skill, although admittedly less useful when I am quietly judging the lighting in a restaurant.</p>
+      </div>
+      <div class="interest-image-grid" aria-label="Optional interiors and design images">
+        <div id="interiors-image-1" class="interest-image-placeholder" role="img" aria-label="interiors-image-1 placeholder">interiors-image-1</div>
+        <div id="interiors-image-2" class="interest-image-placeholder" role="img" aria-label="interiors-image-2 placeholder">interiors-image-2</div>
+      </div>
+      <div class="interest-caption">Optional image placeholders for future Interiors &amp; Design photos.</div>
+    </article>
+  </div>
+
+  <div class="interest-modal" id="interest-modal-ai" data-interest-modal="ai" role="dialog" aria-modal="true" aria-labelledby="interest-title-ai" hidden="">
+    <div class="interest-modal__shade" data-interest-close=""></div>
+    <article class="interest-modal__card" tabindex="-1">
+      <button class="interest-close" type="button" data-interest-close="" aria-label="Close AI &amp; Emerging Tech details">&times;</button>
+      <div class="interest-kicker">Emerging capability</div>
+      <h3 id="interest-title-ai">AI &amp; Emerging Tech</h3>
+      <div class="interest-copy">
+        <p>AI has become both a strategic tool and a creative outlet for me. I use it to explore ideas, prototype concepts, improve workflows and think through commercial, brand and design challenges from multiple angles.</p>
+        <p>Creatively, it gives me a way to express ideas that might otherwise stay stuck in my head. I can turn rough thoughts into visuals, structures, mock-ups, written concepts and testable directions quickly, then refine them into something more polished and useful.</p>
+        <p>Professionally, I am interested in how AI can support retail, brand storytelling, customer experience, product development and smarter ways of working. I do not see it as a replacement for human judgement, taste or instinct, but as a powerful tool for extending them. Used properly, it helps people move from &ldquo;I have an idea&rdquo; to &ldquo;here is a version we can actually discuss.&rdquo;</p>
+      </div>
+      <div class="interest-image-grid" aria-label="Optional AI and emerging tech images">
+        <div id="ai-image-1" class="interest-image-placeholder" role="img" aria-label="ai-image-1 placeholder">ai-image-1</div>
+        <div id="ai-image-2" class="interest-image-placeholder" role="img" aria-label="ai-image-2 placeholder">ai-image-2</div>
+      </div>
+      <div class="interest-caption">Optional image placeholders for future AI &amp; Emerging Tech visuals.</div>
+    </article>
+  </div>
 
   <!-- ============ CLOSING / CONTACT (sage) ============ -->
   <section id="contact" style="position:relative;background:linear-gradient(160deg,#33402D,#222C1D);padding:clamp(80px,13vh,150px) clamp(24px,7vw,120px) clamp(56px,8vh,80px);overflow:hidden;">
@@ -1408,6 +1498,7 @@ class Component extends DCLogic {
       return btn;
     };
     this._mountFold = mountFold;
+    this._normalizeTimelineCells = normalizeTimelineCells;
     normalizeTimelineCells();
 
     // Reference cards: short pull-quote always shown; full reference letter unfolds below.
@@ -1446,16 +1537,20 @@ class Component extends DCLogic {
       mountFold(card, wrap, { variant: 'cream', lc: 'See', rc: 'more', lo: 'See', ro: 'less', aria: 'See more achievements', gap: TIMELINE_FOLD_GAP });
     });
 
-    this.initSkillWeb(motion);
-    this.initStatsChart(motion);
-    this.initTimelineSort(motion);
-    this.initProjectCaptions(root);
-    this.initProjectImageSwaps(root, projectMotion);
-    this.initCarousel(motion);
-    this.initRefRings(motion);
-    this.initDock(root);
-    this.initSectionPolish(root);
-    this.initTitleFx(root, motion);
+    const safeInit = (label, fn) => {
+      try { fn(); } catch (e) { console.warn('cv init ' + label, e); }
+    };
+    safeInit('skill web', () => this.initSkillWeb(motion));
+    safeInit('stats chart', () => this.initStatsChart(motion));
+    safeInit('timeline controls', () => this.initTimelineSort(motion));
+    safeInit('project captions', () => this.initProjectCaptions(root));
+    safeInit('project image swaps', () => this.initProjectImageSwaps(root, projectMotion));
+    safeInit('portfolio carousel', () => this.initCarousel(motion));
+    safeInit('reference labels', () => this.initRefRings(motion));
+    safeInit('navigation dock', () => this.initDock(root));
+    safeInit('section polish', () => this.initSectionPolish(root));
+    safeInit('title animation', () => this.initTitleFx(root, motion));
+    safeInit('interest modals', () => this.initInterestModals(root));
 
     const reveals = Array.from(root.querySelectorAll('[data-reveal]'));
     // This runtime can freeze CSS transitions/animations at t=0, which would pin
@@ -1613,6 +1708,190 @@ class Component extends DCLogic {
     requestAnimationFrame(update);
     setTimeout(update, 220);
     } catch (e) { console.warn('cv init', e); }
+  }
+
+  initFoldControls(root) {
+    const mountFold = this._mountFold;
+    if (!root || !mountFold) return;
+    const TIMELINE_FOLD_GAP = 'clamp(58px,6.5vw,76px)';
+    const timelineStations = () => Array.from(root.querySelectorAll('div')).filter(d => /grid-template-columns:\s*28px/.test(d.getAttribute('style') || ''));
+
+    if (this._normalizeTimelineCells) this._normalizeTimelineCells();
+
+    Array.from(root.querySelectorAll('[data-quote-toggle]')).forEach(btn => {
+      if (btn.closest('[data-fold-ctl]')) return;
+      const wrap = btn.closest('[data-reveal]') || btn.parentElement;
+      const ring = wrap && wrap.querySelector('[data-ref-ring]');
+      if (!ring) return;
+      const shortP = ring.querySelector('[data-short-quote]');
+      const fullBox = ring.querySelector('[data-full-quote]');
+      if (!shortP || !fullBox) return;
+      shortP.style.maxHeight = '';
+      shortP.style.opacity = '1';
+      fullBox.style.marginTop = '16px';
+      mountFold(wrap, fullBox, { btn, variant: 'green', lc: 'See', rc: 'more', lo: 'See', ro: 'less', aria: 'Reveal full reference', gap: TIMELINE_FOLD_GAP });
+    });
+
+    const profileDetails = document.getElementById('profile-details');
+    if (profileDetails) {
+      const card = profileDetails.parentElement;
+      if (card && !card.querySelector('[data-fold-ctl]')) {
+        mountFold(card, profileDetails, { lc: 'Read full', rc: 'Profile', lo: 'Show', ro: 'Less', aria: 'Read full profile', gap: 'clamp(46px,5.5vw,58px)' });
+      }
+    }
+
+    timelineStations().forEach(station => {
+      const card = Array.from(station.querySelectorAll('div')).find(d => d.querySelector('h3') && d.querySelector('ul'));
+      const ul = card && card.querySelector('ul');
+      if (!card || !ul) return;
+      if (card.querySelector('[data-fold-ctl]')) return;
+      const wrap = document.createElement('div');
+      ul.parentNode.insertBefore(wrap, ul);
+      wrap.appendChild(ul);
+      ul.style.margin = '4px 0 0';
+      mountFold(card, wrap, { variant: 'cream', lc: 'See', rc: 'more', lo: 'See', ro: 'less', aria: 'See more achievements', gap: TIMELINE_FOLD_GAP });
+    });
+  }
+
+  rehydrateInteractions(root) {
+    if (!root) return;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mobileLike = window.matchMedia && window.matchMedia('(max-width: 767px)').matches;
+    const motion = (this.props.motionEnabled !== false) && !reduce && !mobileLike;
+    const projectMotion = (this.props.motionEnabled !== false) && !reduce;
+    const safeInit = (label, fn) => {
+      try { fn(); } catch (e) { console.warn('cv rebind ' + label, e); }
+    };
+
+    safeInit('fold controls', () => this.initFoldControls(root));
+    safeInit('project captions', () => this.initProjectCaptions(root));
+    safeInit('project image swaps', () => this.initProjectImageSwaps(root, projectMotion));
+    safeInit('portfolio carousel', () => this.initCarousel(motion));
+    safeInit('reference labels', () => this.initRefRings(motion));
+    safeInit('timeline controls', () => this.initTimelineSort(motion));
+    safeInit('navigation dock', () => this.initDock(root));
+    safeInit('section polish', () => this.initSectionPolish(root));
+    safeInit('interest modals', () => this.initInterestModals(root));
+    if (this._sizeSlots) this._sizeSlots();
+    if (this._update) this._update();
+  }
+
+  initInterestModals(root) {
+    if (this._interestCleanup) { try { this._interestCleanup(); } catch (e) {} }
+    const buttons = Array.from(root.querySelectorAll('[data-interest-open]'));
+    const modals = Array.from(root.querySelectorAll('[data-interest-modal]'));
+    if (!buttons.length || !modals.length) return;
+
+    let activeModal = null;
+    let lastFocus = null;
+    let closeTimer = null;
+    let previousOverflow = '';
+    const focusableSelector = 'button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])';
+
+    modals.forEach(modal => {
+      modal.hidden = true;
+      modal.removeAttribute('data-open');
+      modal.setAttribute('aria-hidden', 'true');
+    });
+
+    const setExpanded = (topic, open) => {
+      buttons.forEach(btn => {
+        if (btn.dataset.interestOpen === topic) {
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        } else if (open) {
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    };
+
+    const closeModal = () => {
+      if (!activeModal) return;
+      const modal = activeModal;
+      const topic = modal.dataset.interestModal;
+      activeModal = null;
+      modal.removeAttribute('data-open');
+      modal.setAttribute('aria-hidden', 'true');
+      setExpanded(topic, false);
+      document.body.style.overflow = previousOverflow;
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => { modal.hidden = true; }, 260);
+      if (lastFocus && typeof lastFocus.focus === 'function') {
+        setTimeout(() => {
+          try { lastFocus.focus({ preventScroll: true }); } catch (e) { lastFocus.focus(); }
+        }, 20);
+      }
+    };
+
+    const openModal = (topic, button) => {
+      const modal = modals.find(item => item.dataset.interestModal === topic);
+      if (!modal) return;
+      if (activeModal) closeModal();
+      clearTimeout(closeTimer);
+      lastFocus = button || document.activeElement;
+      previousOverflow = document.body.style.overflow || '';
+      document.body.style.overflow = 'hidden';
+      modal.hidden = false;
+      activeModal = modal;
+      modal.removeAttribute('aria-hidden');
+      modal.setAttribute('data-open', 'true');
+      setExpanded(topic, true);
+      requestAnimationFrame(() => {
+        modal.setAttribute('data-open', 'true');
+        const target = modal.querySelector('.interest-modal__card') || modal.querySelector('.interest-close');
+        if (target) {
+          try { target.focus({ preventScroll: true }); } catch (e) { target.focus(); }
+        }
+      });
+    };
+
+    const onButtonClick = (event) => {
+      const button = event.currentTarget;
+      openModal(button.dataset.interestOpen, button);
+    };
+
+    const onCloseClick = (event) => {
+      if (event.target.closest('[data-interest-close]')) closeModal();
+    };
+
+    const onKeyDown = (event) => {
+      if (!activeModal) return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeModal();
+        return;
+      }
+      if (event.key !== 'Tab') return;
+      const focusables = Array.from(activeModal.querySelectorAll(focusableSelector))
+        .filter(el => !el.disabled && el.getClientRects().length > 0);
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    buttons.forEach(button => button.addEventListener('click', onButtonClick));
+    modals.forEach(modal => modal.addEventListener('click', onCloseClick));
+    document.addEventListener('keydown', onKeyDown);
+
+    this._interestCleanup = () => {
+      buttons.forEach(button => button.removeEventListener('click', onButtonClick));
+      modals.forEach(modal => modal.removeEventListener('click', onCloseClick));
+      document.removeEventListener('keydown', onKeyDown);
+      clearTimeout(closeTimer);
+      if (activeModal) {
+        activeModal.hidden = true;
+        activeModal.removeAttribute('data-open');
+      }
+      activeModal = null;
+      buttons.forEach(button => button.setAttribute('aria-expanded', 'false'));
+      document.body.style.overflow = previousOverflow || '';
+    };
   }
 
   initTitleFx(root, motion) {
@@ -2718,6 +2997,8 @@ class Component extends DCLogic {
     if (this._carouselRaf) cancelAnimationFrame(this._carouselRaf);
     if (this._gemRaf) cancelAnimationFrame(this._gemRaf);
     if (this._gemResize) window.removeEventListener('resize', this._gemResize);
+    if (this._interestCleanup) { try { this._interestCleanup(); } catch (e) {} }
+    if (this._rehydrateTimer) clearTimeout(this._rehydrateTimer);
     if (this._onScroll) {
       window.removeEventListener('scroll', this._onScroll);
       document.removeEventListener('scroll', this._onScroll, { capture: true });
@@ -2732,6 +3013,20 @@ class Component extends DCLogic {
     // transition; re-strip transitions and re-run so reveals/parallax don't break.
     if (this._reveals) this._reveals.forEach(el => { el.style.transition = 'none'; });
     if (this._sizeSlots) this._sizeSlots();
+    const root = document.getElementById('cv-root');
+    const tracks = root ? Array.from(root.querySelectorAll('[data-track]')) : [];
+    const needsRebind = root && (
+      !document.getElementById('cv-dock') ||
+      !root.querySelector('[data-fold-ctl]') ||
+      tracks.some(track => track.dataset.looped !== '1')
+    );
+    if (needsRebind && !this._rehydrateTimer) {
+      this._rehydrateTimer = setTimeout(() => {
+        this._rehydrateTimer = null;
+        const freshRoot = document.getElementById('cv-root');
+        if (freshRoot) this.rehydrateInteractions(freshRoot);
+      }, 0);
+    }
     if (this._update) this._update();
   }
 
